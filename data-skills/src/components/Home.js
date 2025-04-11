@@ -1,7 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-const Home = () => {
+import ProgressBar from "./ProgressBar"
 
+export function Home() {
+    return (
+        <div className="App">
+          <header className="App-header">
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
+            </p>
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
+            </a>
+          </header>
+          <ProgressBar />
+          
+        </div>
+      )
 }
-
-export default Home;

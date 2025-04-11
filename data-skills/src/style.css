@@ -1,0 +1,79 @@
+.module-container {
+  padding-top: 150px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  padding: 0px 150px; /* You can adjust this padding if needed */
+  gap: 25px;
+}
+
+h1 {
+  color: #000;
+  font-family: Inter;
+  font-size: 47px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h2 {
+  color: #000;
+  font-family: Inter;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+ul, li, p {
+  color: #000;
+  font-family: Inter;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Specific styles for the container with flexbox */
+.module-container-flex {
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 60px; /* djust padding here */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.module-list h2 {
+  color: #000;
+  font-family: Inter;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.module-list li {
+  color: #181B1A;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.module-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; 
+  height: auto;
+}
+
+.progressBar {
+  position: fixed;
+  height: 22px; 
+  z-index: 100;
+}
