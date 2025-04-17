@@ -16,14 +16,7 @@ const Home = () => {
         <div>
             <Header />
             <div>
-              <h1>Modules</h1>
-
-              <div>
-                <p>Quick links</p>
-                <a></a>
-                <a></a>
-              </div>
-
+              <h1 class="modules-title">Modules</h1>
               <div class="row">
 
                 <div class="column">
@@ -37,7 +30,7 @@ const Home = () => {
                     <li>Determine Appropriate Sample Sizes for Various Analyses</li>
                     <li>Understand relationship Between Sample Size & Statistical Significance</li>
                     <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/ModuleOne" className="button-style">
+                    <Link to="/representativeness" className="button-style">
                       <button>Begin Learning</button>
                     </Link>
                   </div>
@@ -50,6 +43,13 @@ const Home = () => {
                       src={Mod2Image} 
                       alt="Module 2 cover pic"
                     />
+                    <li>Define Sample Size and Its Importance</li>
+                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
+                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
+                    <li>Assess the Impact of Sample Size on Data Representation</li>
+                    <Link to="/representativeness" className="button-style">
+                      <button>Begin Learning</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -60,6 +60,13 @@ const Home = () => {
                       src={Mod3Image} 
                       alt="Module 3 cover pic"
                     />
+                    <li>Define Sample Size and Its Importance</li>
+                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
+                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
+                    <li>Assess the Impact of Sample Size on Data Representation</li>
+                    <Link to="/representativeness" className="button-style">
+                      <button>Begin Learning</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -70,6 +77,13 @@ const Home = () => {
                       src={Mod4Image} 
                       alt="Module 4 cover pic"
                     />
+                    <li>Define Sample Size and Its Importance</li>
+                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
+                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
+                    <li>Assess the Impact of Sample Size on Data Representation</li>
+                    <Link to="/representativeness" className="button-style">
+                      <button>Begin Learning</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -80,6 +94,13 @@ const Home = () => {
                       src={Mod5Image} 
                       alt="Module 5 cover pic"
                     />
+                    <li>Define Sample Size and Its Importance</li>
+                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
+                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
+                    <li>Assess the Impact of Sample Size on Data Representation</li>
+                    <Link to="/representativeness" className="button-style">
+                      <button>Begin Learning</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -90,6 +111,13 @@ const Home = () => {
                       src={Mod6Image} 
                       alt="Module 6 cover pic"
                     />
+                    <li>Define Sample Size and Its Importance</li>
+                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
+                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
+                    <li>Assess the Impact of Sample Size on Data Representation</li>
+                    <Link to="/representativeness" className="button-style">
+                      <button>Begin Learning</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -100,6 +128,13 @@ const Home = () => {
                       src={Mod7Image} 
                       alt="Module 7 cover pic"
                     />
+                    <li>Define Sample Size and Its Importance</li>
+                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
+                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
+                    <li>Assess the Impact of Sample Size on Data Representation</li>
+                    <Link to="/representativeness" className="button-style">
+                      <button>Begin Learning</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -114,6 +149,9 @@ const Home = () => {
                     <li>Address Missing Data Impact on accuracy and bias</li>
                     <li>Identify Outliers using visual/statistical methods</li>
                     <li>Manage Outliers to balance accuracy and insights</li>
+                    <Link to="/representativeness" className="button-style">
+                      <button>Begin Learning</button>
+                    </Link>
                   </div>
                 </div>
               </div>

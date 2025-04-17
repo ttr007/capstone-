@@ -1,24 +1,42 @@
 import React from 'react';
-import '../header.css';
 import logo from '../images/logo.png';
+import HomeIcon from '../images/icons/Home.png';
+import FAQIcon from '../images/icons/FAQ.png';
+import UserIcon from '../images/icons/Profile.png';
+import '../../src/header.css';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
-    return (
-        <header className="header">
-            <div className="logo">
-                <img src={logo} alt="Logo" /> 
-                <h1>Data Analysis Concepts</h1>
-            </div>
-            <nav className="nav-links">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-    );
+function Header() {
+  return (
+    <header className="header">
+      {/* Logo and title */}
+      <div className="logo-container">
+        <img src={logo} alt="App Logo" className="logo-img" />
+        <h1 className="app-title">Data Analysis Concepts</h1>
+      </div>
+
+      {/* Search bar */}
+      <div className="search-container">
+        <div className="search-bar"></div>
+        <div className="search-text">Search...</div>
+      </div>
+
+      {/* Navigation icons */}
+      <nav className="nav-icons">
+        <Link to="/">
+            <img src={HomeIcon} alt="Home" className="nav-icon" />
+        </Link>
+
+        <Link to="/faq">
+            <img src={FAQIcon} alt="FAQ" className="nav-icon" />
+        </Link>
+
+        <Link>
+        <img src={UserIcon} alt="User" className="nav-icon" />
+        </Link>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;
