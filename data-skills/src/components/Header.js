@@ -27,12 +27,12 @@ function Header() {
             <img src={HomeIcon} alt="Home" className="nav-icon" />
         </Link>
 
-        <Link to="/faq">
+        <Link to="/FAQ">
             <img src={FAQIcon} alt="FAQ" className="nav-icon" />
         </Link>
 
         <Link>
-        <img src={UserIcon} alt="User" className="nav-icon" />
+            <img src={UserIcon} alt="User" className="nav-icon" />
         </Link>
       </nav>
     </header>

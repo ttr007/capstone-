@@ -9,6 +9,7 @@ import sampbias from '../images/non random sampling bias.png';
 import Image from 'react-bootstrap/Image';
 import ProgressBar from './ProgressBar';
 import Header from './Header';
+import { Link } from 'react-router-dom';
 
 export function ModuleOne () {
     return (
@@ -127,6 +128,9 @@ export function ModuleOne () {
                         <li>Researcher chooses a sample that is available in a non-random way. This can be affected by bias because the time of day and place where the researcher is choosing people can produce a sample that is biased.</li>
                     </ul>
                 </div>
+                <Link to="/ModuleOneSummary" className="button-style">
+                      <button>Summary</button>
+                </Link>
             </main>
         </div>
     )
