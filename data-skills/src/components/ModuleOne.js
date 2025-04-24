@@ -7,16 +7,16 @@ import cluster from '../images/cluster sampling.png';
 import voluntary from '../images/voluntary sampling.png';
 import sampbias from '../images/non random sampling bias.png';
 import Image from 'react-bootstrap/Image';
-import ProgressBar from './ProgressBar';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import M1Quiz from './ModuleOneQuiz';
+
 
 export function ModuleOne () {
     return (
         <div>
             <Header />
             <main className="module-container">
-                <ProgressBar />
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '40px' }}>
                     <div style={{ flex: 4 }}>
                         <h1 className="module-title, fw-bold">Module 1 - Representativeness</h1>
@@ -128,9 +128,9 @@ export function ModuleOne () {
                         <li>Researcher chooses a sample that is available in a non-random way. This can be affected by bias because the time of day and place where the researcher is choosing people can produce a sample that is biased.</li>
                     </ul>
                 </div>
-                <Link to="/ModuleOneSummary" className="button-style">
-                      <button>Summary</button>
-                </Link>
+
+                <M1Quiz />
+
             </main>
         </div>
     )
