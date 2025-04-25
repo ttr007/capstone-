@@ -4,8 +4,9 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  padding: 0px 150px; /* You can adjust this padding if needed */
+  padding: 0px 150px; 
   gap: 25px;
+  overflow: auto !important;
 }
 
 h1 {
@@ -35,13 +36,12 @@ ul, li, p {
   line-height: normal;
 }
 
-/* Specific styles for the container with flexbox */
 .module-container-flex {
   display: flex;
   flex-direction: row; 
   align-items: flex-start;
   gap: 40px;
-  padding: 40px 60px; /* djust padding here */
+  padding: 40px 60px; 
   width: 100%;
   box-sizing: border-box;
 }

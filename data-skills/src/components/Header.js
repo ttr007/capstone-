@@ -34,6 +34,14 @@ function Header() {
         <Link>
         <img src={UserIcon} alt="User" className="nav-icon" />
         </Link>
+        <button 
+          className="btn btn-primary m-2"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          style={{ backgroundColor: 'transparent', border: 'none' }} 
+        >
+        <i className="nav-icon bi bi-list"></i>
+        </button>
       </nav>
     </header>
   );

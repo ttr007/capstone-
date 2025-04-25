@@ -1,45 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import {motion, useScroll} from 'framer-motion'
+import React, { useEffect, useState } from 'react';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+
 const ProgressBar = () => {
-    const {scrollYProgress} = useScroll();
-    const [percentage, setPercentage] = useState(0);
+  const { scrollYProgress } = useScroll();
 
-    useEffect(() => {
-        const unsubscribe = scrollYProgress.on("change", (latest) => {
-            setPercentage(Math.round(latest * 100));
-        });
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 20 });
 
-        return () => unsubscribe(); // Clean up on unmount
-    }, [scrollYProgress]);
+  const radius = 30;
+  const stroke = 10;
+  const normalizedRadius = radius - stroke / 2;
+  const circumference = 2 * Math.PI * normalizedRadius;
 
-    return (
-        <div style={{ background: '#EFF0F2', height: '22px', 
-            position: 'fixed', top: '110px', left: '22.33%', 
-            right: '22.33%', width: '55.34%', borderRadius: '100px', zIndex: 99 }}>
-            <motion.div
-                className="progressBar"
-                style={{
-                    width: `${scrollYProgress.get() * 55.34}%`,  // Adjust width based on scrollYProgress and box width
-                    height: '22px', // Set height of progress bar
-                    background: '#4caf50', // Background color for the progress bar (green)
-                    borderRadius: '100px', // Rounded corners
-                    transformOrigin: '0%',
-                }}
-            />
-            <div style={{ textAlign: 'right', marginTop: '22px', color: '#000',}}>
-                <p style={{
-                    margin: 0,
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '18px',
-                    marginRight: '0',
-                    whiteSpace: 'nowrap',
-                }}>
-                    {percentage}% Completed
-                </p>
-            </div>
-        </div>
-    );
-}
+  const strokeDashoffset = useTransform(
+    smoothProgress,
+    [0, 1],
+    [circumference, 0]
+  );
+
+  const [percentage, setPercentage] = useState(0);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', latest => {
+      setPercentage(Math.round(latest * 100));
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
+  return (
+    <div style={{
+      position: 'fixed',
+      top: '100px',
+      left: '96%',
+      transform: 'translateX(-50%)',
+      zIndex: 105,
+    }}>
+      <svg height={radius * 2} width={radius * 2}>
+        <circle
+          stroke="#EFF0F2"
+          fill="transparent"
+          strokeWidth={stroke}
+          r={normalizedRadius}
+          cx={radius}
+          cy={radius}
+        />
+        <motion.circle
+          stroke="#4caf50"
+          fill="transparent"
+          strokeWidth={stroke}
+          strokeLinecap="round"
+          r={normalizedRadius}
+          cx={radius}
+          cy={radius}
+          strokeDasharray={circumference}
+          style={{
+            strokeDashoffset: strokeDashoffset,
+            rotate: -90,
+            transformOrigin: '50% 50%',
+          }}
+        />
+      </svg>
+    </div>
+  );
+};
 
 export default ProgressBar;
-
