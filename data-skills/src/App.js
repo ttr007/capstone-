@@ -5,6 +5,8 @@ import { ModuleOne } from './components/ModuleOne'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProgressBar from './components/ProgressBar';
+import ModulePage from './components/ModuleIntro';
+import { ModOneRebuilt } from './components/ModOneRebuilt';
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/representativeness" element={<ModuleOne />} />
+            <Route path="/representativeness2" element={
+              <ModOneRebuilt
+              />} />
             {/* <Route path="/blog" element={<Blog />} /> */}
             {/* <Route path="/BlogForum/:buildingName" element={<BlogForum/>} /> */}
           </Routes>

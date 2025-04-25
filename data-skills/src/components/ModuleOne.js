@@ -6,7 +6,6 @@ import stratified from '../images/stratified sampling.png';
 import cluster from '../images/cluster sampling.png';
 import voluntary from '../images/voluntary sampling.png';
 import sampbias from '../images/non random sampling bias.png';
-import Image from 'react-bootstrap/Image';
 import ProgressBar from './ProgressBar';
 import Header from './Header';
 
