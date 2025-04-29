@@ -9,6 +9,7 @@ import stratified from '../images/stratified sampling.png';
 import cluster from '../images/cluster sampling.png';
 import voluntary from '../images/voluntary sampling.png';
 import sampbias from '../images/non random sampling bias.png';
+import M1Quiz from './ModuleOneQuiz'
 
 export function ModuleOne() {
   return (
@@ -139,6 +140,7 @@ export function ModuleOne() {
         />
         <img src={sampbias} width="805" height="461" alt="Sampling Bias" />
       </div>
+      <M1Quiz />
     </ModulePage>
   );
 }
