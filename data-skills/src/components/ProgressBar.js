@@ -28,8 +28,8 @@ const ProgressBar = () => {
   return (
     <div style={{
       position: 'fixed',
-      top: '100px',
-      left: '96%',
+      top: '120px',
+      left: '4.1%',
       transform: 'translateX(-50%)',
       zIndex: 105,
     }}>
@@ -43,7 +43,7 @@ const ProgressBar = () => {
           cy={radius}
         />
         <motion.circle
-          stroke="#4caf50"
+          stroke="#78ABEE"
           fill="transparent"
           strokeWidth={stroke}
           strokeLinecap="round"
