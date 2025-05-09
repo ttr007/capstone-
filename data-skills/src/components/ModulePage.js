@@ -15,12 +15,15 @@ const ModulePage = ({ title, url, children }) => {
       }}
     >
       <Header />
-      <ModuleBar onExpand={() => setModuleBarExpanded(true)} onCollapse={() => setModuleBarExpanded(false)} />
+      <ModuleBar 
+        onExpand={() => setModuleBarExpanded(true)} 
+        onCollapse={() => setModuleBarExpanded(false)} 
+      />
       <main
         className="module-container"
         style={{
-          paddingRight: moduleBarExpanded ? '220px' : '50px', // Adjust padding dynamically
-          transition: 'padding-right 0.3s', // Smooth transition when expanding/collapsing
+          paddingRight: moduleBarExpanded ? '260px' : '50px', // Match the offcanvas width exactly
+          transition: 'padding-right 0.3s ease', // Smooth transition when expanding/collapsing
         }}
       >
         <ProgressBar />
@@ -30,7 +33,9 @@ const ModulePage = ({ title, url, children }) => {
             <VideoBlock title="" url={url} />
           </div>
         </div>
-        {children}
+        <div id="main-content">
+          {children}
+        </div>
       </main>
     </div>
   );

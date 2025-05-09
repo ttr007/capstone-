@@ -1,8 +1,39 @@
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Offcanvas } from 'bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const ModuleBar = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  // Auto-open offcanvas on first navigation
+  useEffect(() => {
+    const offcanvasEl = document.getElementById('offcanvas');
+    const mainContent = document.getElementById('main-content');
+
+    if (offcanvasEl) {
+      const bsOffcanvas = Offcanvas.getOrCreateInstance(offcanvasEl);
+      bsOffcanvas.show();
+    }
+    const handleShow = () => {
+      mainContent?.classList.add('main-content-shifted');
+    };
+
+    const handleHide = () => {
+      mainContent?.classList.remove('main-content-shifted');
+    };
+
+    offcanvasEl.addEventListener('shown.bs.offcanvas', handleShow);
+    offcanvasEl.addEventListener('hidden.bs.offcanvas', handleHide);
+
+    return () => {
+      offcanvasEl.removeEventListener('shown.bs.offcanvas', handleShow);
+      offcanvasEl.removeEventListener('hidden.bs.offcanvas', handleHide);
+    };
+  }, []);
   const modules = [
-    { title: 'Sampling', icon: 'bi-house', time: '6 min read', link: 'sampling' },
+    { title: 'Sampling', icon: 'bi-house', time: '6 min read', link: '/sampling' },
     { title: 'Change Over Time', icon: 'bi-alarm', time: '5 min read', link: '/change-over-time' },
     { title: 'Relationships', icon: 'bi-table', time: '7 min read', link: '/relationships' },
     { title: 'Patterns and Variability', icon: 'bi-bar-chart', time: '5 min read', link: '/patterns-and-variability' },
@@ -40,26 +71,65 @@ const ModuleBar = () => {
       </div>
       <div className="offcanvas-body px-0">
         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
-          {modules.map((mod, i) => (
-            <li className="nav-item" key={i} style={{ height: '80px', width: '100%' }}>
-              <a href={mod.link} className="nav-link text-black d-flex align-items-center" style={{ height: '100%' }}>
-                {/* Icon Container */}
-                <div className="d-flex align-items-center justify-content-center me-3" style={{ width: '40px', height: '100%' }}>
-                  <i className={`bi ${mod.icon}`} style={{ fontSize: '1.75rem', height: '100%', lineHeight: '1' }}></i>
-                </div>
+          {modules.map((mod, i) => {
+            const isActive = currentPath === mod.link;
+            return (
+              <li
+                className="nav-item"
+                key={i}
+                style={{
+                  height: '80px',
+                  width: '100%',
+                  backgroundColor: isActive ? '#c0c0c0' : 'transparent',
+                }}
+              >
+                <a
+                  href={mod.link}
+                  className={`nav-link text-black d-flex align-items-center ${isActive ? 'fw-bold' : ''}`}
+                  style={{ height: '100%' }}
+                >
+                  {/* Icon */}
+                  <div
+                    className="d-flex align-items-center justify-content-center me-3"
+                    style={{ width: '40px', height: '100%' }}
+                  >
+                    <i
+                      className={`bi ${mod.icon}`}
+                      style={{ fontSize: '1.75rem' }}
+                    ></i>
+                  </div>
 
-                {/* Text Container */}
-                <div className="d-flex flex-column justify-content-center align-items-start" style={{ height: '100%' }}>
-                  <span className="fw-semibold" style={{ lineHeight: '1.2', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-                    {mod.title}
-                  </span>
-                  <small className="text-light text-black" style={{ overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-                    {mod.time}
-                  </small>
-                </div>
-              </a>
-            </li>
-          ))}
+                  {/* Text */}
+                  <div
+                    className="d-flex flex-column justify-content-center align-items-start"
+                    style={{ height: '100%' }}
+                  >
+                    <span
+                      className="fw-semibold"
+                      style={{
+                        lineHeight: '1.2',
+                        overflow: 'hidden',
+                        whiteSpace: 'nowrap',
+                        textOverflow: 'ellipsis',
+                      }}
+                    >
+                      {mod.title}
+                    </span>
+                    <small
+                      className="text-light text-black"
+                      style={{
+                        overflow: 'hidden',
+                        whiteSpace: 'nowrap',
+                        textOverflow: 'ellipsis',
+                      }}
+                    >
+                      {mod.time}
+                    </small>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

@@ -2,10 +2,21 @@
   padding-top: 150px;
 }
 
+.main-content-transition {
+  transition: margin-right 0.3s ease;
+}
+
+.main-content-shifted {
+  margin-right: 260px; /* same width as your offcanvas */
+}
+
+[id] {
+  scroll-margin-top: 190px;
+}
+
 a[href^="#"] {
-  scroll-margin-top: 500px; /* Adjust this value based on your header height */
-  text-decoration: none;  /* Removes the underline */
-  color: lightskyblue;         /* Inherits the color from parent or default */
+  text-decoration: none;  
+  color: lightskyblue;
 }
 
 a[href^="#"]:hover {

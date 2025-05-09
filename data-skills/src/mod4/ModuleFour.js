@@ -1,11 +1,10 @@
 import React from 'react';
-import ModulePage from './ModulePage';
-import ListBlock from './ListBlock';
-import ParaBlock from './ParaBlock';
-import VideoBlock from './VideoBlock';
-import CalloutBlock from './CalloutBlock';
-import TableBlock from './TableBlock';
-import FormulaBlock from './FormulaBlock'; // Ensure FormulaBlock is imported
+import ModulePage from '../components/ModulePage';
+import ListBlock from '../components/ListBlock';
+import ParaBlock from '../components/ParaBlock';
+import CalloutBlock from '../components/CalloutBlock';
+import FormulaBlock from '../components/FormulaBlock';
+import TableBlock from '../components/TableBlock';
 
 export function ModuleFour() {
     return (

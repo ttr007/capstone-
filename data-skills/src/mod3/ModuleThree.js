@@ -1,10 +1,10 @@
 import React from 'react';
-import ModulePage from './ModulePage';
-import ListBlock from './ListBlock';
-import ParaBlock from './ParaBlock';
-import VideoBlock from './VideoBlock';
-import CalloutBlock from './CalloutBlock';
-import TableBlock from './TableBlock';
+import ModulePage from '../components/ModulePage';
+import ListBlock from '../components/ListBlock';
+import ParaBlock from '../components/ParaBlock';
+import CalloutBlock from '../components/CalloutBlock';
+import FormulaBlock from '../components/FormulaBlock';
+import TableBlock from '../components/TableBlock';
 export function ModuleThree () {
   return (
     <ModulePage
@@ -118,11 +118,6 @@ export function ModuleThree () {
                 </span>
             ]} />
         </div>
-
-      <VideoBlock
-        title="Relationships"
-        url="attachment:ed6d2a8b-291f-4975-8164-074fe50ea967:Relationships.png"
-      />
 
       <div id="why-it-matters">
         <ParaBlock title="Why It Matters" items={["Knowing the difference between correlation and causation helps you:"]}/>

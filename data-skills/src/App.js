@@ -1,14 +1,14 @@
 import './style.css';
 import React from 'react';
 import Home from './components/Home';
-import { ModuleOne } from './components/ModuleOne';
-import { ModuleTwo } from './components/ModuleTwo';
-import { ModuleThree } from './components/ModuleThree';
-import { ModuleFour } from './components/ModuleFour';
-import { ModuleFive } from './components/ModuleFive';
-import { ModuleSix } from './components/ModuleSix';
-import { ModuleSeven } from './components/ModuleSeven';
-import { ModuleEight } from './components/ModuleEight';
+import { ModuleOne } from './mod1/ModuleOne';
+import { ModuleTwo } from './mod2/ModuleTwo';
+import { ModuleThree } from './mod3/ModuleThree';
+import { ModuleFour } from './mod4/ModuleFour';
+import { ModuleFive } from './mod5/ModuleFive';
+import { ModuleSix } from './mod6/ModuleSix';
+import { ModuleSeven } from './mod7/ModuleSeven';
+import { ModuleEight } from './mod8/ModuleEight';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
