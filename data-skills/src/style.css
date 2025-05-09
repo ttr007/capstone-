@@ -2,6 +2,16 @@
   padding-top: 150px;
 }
 
+a[href^="#"] {
+  scroll-margin-top: 500px; /* Adjust this value based on your header height */
+  text-decoration: none;  /* Removes the underline */
+  color: lightskyblue;         /* Inherits the color from parent or default */
+}
+
+a[href^="#"]:hover {
+  color: blue;                 
+}
+
 body {
   font-family: 'Inter', sans-serif;
   padding: 0px 150px; 

@@ -1,6 +1,6 @@
 import ListBlock from "./ListBlock";
 import ParaBlock from "./ParaBlock";
-import ModulePage from "./ModPageLayout";
+import ModulePage from "./ModulePage";
 
 import sampling from '../images/sampling photo.png';
 import simplerand from '../images/simple random photo.png';
