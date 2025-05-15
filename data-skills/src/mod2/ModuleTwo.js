@@ -14,7 +14,6 @@ export function ModuleTwo() {
   return (
     <ModulePage
       title="Change over Time"
-      url="https://www.youtube.com/embed/dQw4w9WgXcQ"
     >
       <ParaBlock
         items={[

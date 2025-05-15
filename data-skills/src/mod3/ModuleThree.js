@@ -3,7 +3,6 @@ import ModulePage from '../components/ModulePage';
 import ListBlock from '../components/ListBlock';
 import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
-import FormulaBlock from '../components/FormulaBlock';
 import TableBlock from '../components/TableBlock';
 export function ModuleThree () {
   return (
@@ -13,7 +12,8 @@ export function ModuleThree () {
     >
       <ParaBlock
         items={[
-            <span>When looking at data, it’s not enough to just see <strong>what</strong> changed—you want to understand <strong>why</strong>. This module covers two key concepts that help explain how variables relate:</span>
+            <span>When looking at data, it’s not enough to just see <strong>what</strong> changed—you want to understand <strong>why</strong>. This module covers two key concepts that help explain how variables relate: <strong>assocation</strong> and <strong>causality</strong>
+            . Understanding the difference between these can help you make better decisions and avoid drawing the wrong conclusions from your data.</span>
         ]}
       />
       
@@ -40,8 +40,7 @@ export function ModuleThree () {
           "Causality means one variable causes another to change.",
           "Association ≠ Causation: Just because two things happen together doesn’t mean one caused the other.",
           "These concepts are critical for interpreting data accurately and making ",
-          <span key="informed"><strong>informed</strong></span>,
-          " decisions."
+          <span key="informed"><strong>informed</strong> decisions.</span>
         ]}
       />
 
@@ -65,7 +64,6 @@ export function ModuleThree () {
         ]}
       />
 
-      {/* Causality Section */}
       <div id="causality">
         <ParaBlock title="Causality" items={[]} />
         <CalloutBlock

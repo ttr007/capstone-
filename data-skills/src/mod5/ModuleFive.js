@@ -51,7 +51,7 @@ export function ModuleFive() {
                 <ParaBlock title="Noise" items={[]} />
                 <CalloutBlock
                     type="info"
-                    title="💡 Noise"
+                    title="Noise"
                     description="Random variation in data that isn’t caused by meaningful differences. It’s natural, but too much hides real patterns."
                 />
                 <TableBlock
@@ -68,7 +68,7 @@ export function ModuleFive() {
                         <span key="noise-example">Inaccurately filled client intake forms in Pierce County may create noise and reduce the ability to analyze service needs accurately.</span>
                     ]}
                 />
-                <ParaBlock
+                <ListBlock
                     title="How to Reduce Noise"
                     items={[
                         <span key="reduce-noise">Use <strong>visualizations</strong>: Box plots and scatter plots help spot outliers.</span>,
@@ -91,20 +91,20 @@ export function ModuleFive() {
                         <span key="inaccuracy-example">An inaccurate clock (always 10 minutes ahead) gives you the wrong time every time. Similarly, Pierce County’s GPS or GIS tagging technologies may report inaccurate construction progress.</span>
                     ]}
                 />
-                <ParaBlock
+                <ListBlock
                     title="Why It Matters"
                     items={[
                         <span key="inaccuracy-text"><strong>Inaccuracy</strong> misleads analysis by skewing results in one direction.</span>,
-                        "Unlike noise, inaccuracy is <strong>fixable</strong> once you identify the cause.",
-                        "Unchecked inaccuracy leads to <strong>harmful decisions</strong>."
+                        <span>Unlike noise, inaccuracy is <strong>fixable</strong> once you identify the cause.</span>,
+                        <span>Unchecked inaccuracy leads to <strong>harmful decisions</strong>.</span>
                     ]}
                 />
-                <ParaBlock
+                <ListBlock
                     title="How to Address Inaccuracy"
                     items={[
-                        "<strong>Calibrate tools</strong> and test software regularly.",
-                        "Watch for recurring <strong>errors</strong> or patterns.",
-                        "Adjust processes based on <strong>observed bias</strong>."
+                        <span><strong>Calibrate tools</strong> and test software regularly.</span>,
+                        <span>Watch for recurring <strong>errors</strong> or patterns.</span>,
+                        <span>Adjust processes based on <strong>observed bias</strong>.</span>
                     ]}
                 />
             </div>
@@ -118,17 +118,16 @@ export function ModuleFive() {
                 />
                 <ListBlock
                     items={[
-                        "<strong>High Precision, Low Accuracy:</strong> Results are consistent, but wrong.",
-                        "<strong>High Accuracy, Low Precision:</strong> Results are close to the true value, but inconsistent.",
-                        "<strong>High Accuracy + High Precision:</strong> Ideal—consistent and correct."
+                        <span>High Precision, Low Accuracy: Results are consistent, but wrong.</span>,
+                        <span>High Accuracy, Low Precision: Results are close to the true value, but inconsistent.</span>,
+                        <span>High Accuracy + High Precision: Ideal—consistent and correct.</span>
                     ]}
                 />
             </div>
 
             <div id="comparing-noise-inaccuracy">
-                <ParaBlock title="Comparing Noise and Inaccuracy" items={[]} />
+                <ParaBlock title="Noise vs. Inaccuracy" items={[]} />
                 <TableBlock
-                    title="Noise vs. Inaccuracy"
                     headers={['Concept', 'Type of Error', 'Source', 'Can You Fix It?', 'Effect']}
                     rows={[
                         ['Noise', 'Random', 'Natural variation or human inconsistency', 'Can be reduced, but not fully removed', 'Makes patterns harder to detect'],

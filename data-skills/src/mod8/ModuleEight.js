@@ -4,25 +4,26 @@ import ListBlock from '../components/ListBlock';
 import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
+import FormulaBlock from '../components/FormulaBlock';
 
 export function ModuleEight() {
     return (
         <ModulePage title="Skewing the Data" url="https://www.youtube.com/embed/dQw4w9WgXcQ">
-            
+
             <div id="intro">
                 <ParaBlock
                     items={[
                         <span key="1">Some data entries—whether missing or extreme—can <strong>distort your results</strong> and lead to misleading conclusions.</span>
                     ]}
                 />
-                
+
                 <ParaBlock
                     items={[
                         <span key="1"><strong>Understanding how to recognize and handle these values</strong>—especially missing data and outliers—is essential to making fair, accurate, and useful decisions based on your data.</span>
                     ]}
                 />
             </div>
-            
+
             <div id="table-of-contents">
                 <ListBlock
                     items={[
@@ -138,10 +139,21 @@ export function ModuleEight() {
                 <ListBlock
                     title="Statistical Methods"
                     items={[
-                        <span key="1"><strong>Z-score</strong> tells how far a point is from the average. If a score is very high or low, it might be an outlier.</span>,
-                        <span key="2"><strong>Interquartile Range (IQR)</strong> finds values that are far from the middle of the dataset.</span>
+                        <span key="1">Z-score tells how <strong>far</strong> a point is from the average. If a score is very high or low, it might be an outlier.</span>,
                     ]}
                 />
+                <FormulaBlock
+                >
+                    <span key="sd-formula">z = (x - mean) / standard deviation</span>
+                </FormulaBlock>
+                <ListBlock
+                    items={[<span key="2">Interquartile Range (IQR) <strong>finds</strong> values that are far from the middle of the dataset.</span>
+                ]}
+                />
+            <FormulaBlock
+                >
+                    <span key="sd-formula">Outliers = values &lt; Q1 - 1.5 * IQR OR values &gt;  Q3 + 1.5 * IQR </span>
+                </FormulaBlock>
             </div>
 
             <div id="what-to-do-with-outliers">
@@ -155,21 +167,20 @@ export function ModuleEight() {
                 />
             </div>
 
+            <TableBlock
+                headers={["Problem", "Impact"]}
+                rows={[
+                    ["Too much missing data", "Weakens conclusions, introduces bias"],
+                    ["Ignored outliers", "Can lead to missed insights or flawed decisions"],
+                    ["Misrepresented data", "Leads to unfair outcomes or misleading policy"]
+                ]}
+            />
             <div id="why-it-matters">
-                <TableBlock
-                    headers={["Problem", "Impact"]}
-                    rows={[
-                        ["Too much missing data", "Weakens conclusions, introduces bias"],
-                        ["Ignored outliers", "Can lead to missed insights or flawed decisions"],
-                        ["Misrepresented data", "Leads to unfair outcomes or misleading policy"]
-                    ]}
-                />
-                
-                <CalloutBlock
-                    title="Outliers"
-                    type="info"
-                    description={[
-                        <span key="1"><strong>Every data point tells a story.</strong> Some are noise—others are warning signs. Knowing the difference is essential to forming accurate conclusions.</span>
+
+                <ListBlock
+                    title="Why It Matters"
+                    items={[
+                        <span key="1">Every data point tells a story. Some are noise—others are warning signs. Knowing the difference is essential to forming accurate conclusions.</span>
                     ]}
                 />
             </div>
