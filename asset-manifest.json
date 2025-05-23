@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "//ttr007.github.io/capstone-/static/css/main.bfa0d07f.css",
+    "main.js": "//ttr007.github.io/capstone-/static/js/main.862ecdb6.js",
+    "static/media/Mod7.png": "//ttr007.github.io/capstone-/static/media/Mod7.1db2c1976b7345ad1bba.png",
+    "static/media/graph.png": "//ttr007.github.io/capstone-/static/media/graph.fd43dfd3521891b43ab6.png",
+    "static/media/Mod4.png": "//ttr007.github.io/capstone-/static/media/Mod4.d32fd766ed3f5c825457.png",
+    "static/media/Mod5.png": "//ttr007.github.io/capstone-/static/media/Mod5.06e07a0cbc37c676d746.png",
+    "static/media/image (2).png": "//ttr007.github.io/capstone-/static/media/image (2).c3f352b475d8cd1f9878.png",
+    "static/media/Mod3.png": "//ttr007.github.io/capstone-/static/media/Mod3.65ce0e5d2753edc8e622.png",
+    "static/media/Mod6.png": "//ttr007.github.io/capstone-/static/media/Mod6.8f9c5036345966904711.png",
+    "static/media/image (4).png": "//ttr007.github.io/capstone-/static/media/image (4).fc5649e48b55aee3c90c.png",
+    "static/media/image (1).png": "//ttr007.github.io/capstone-/static/media/image (1).ee6fab8ddd0f8b7fd7b9.png",
+    "static/media/image (3).png": "//ttr007.github.io/capstone-/static/media/image (3).1dc3a0c83cc770dd70c2.png",
+    "static/media/notion3.png": "//ttr007.github.io/capstone-/static/media/notion3.b1998882cac098e14505.png",
+    "static/media/Mod1.png": "//ttr007.github.io/capstone-/static/media/Mod1.372fa9f39b77fe8fc5e2.png",
+    "static/media/logo.png": "//ttr007.github.io/capstone-/static/media/logo.0a3e21b2c00205b8f1f7.png",
+    "static/media/TypesSampling.png": "//ttr007.github.io/capstone-/static/media/TypesSampling.53414241bf45e577549f.png",
+    "static/media/Relationships.png": "//ttr007.github.io/capstone-/static/media/Relationships.2c547427b86da5b244e1.png",
+    "static/media/RandomVsSystematic.png": "//ttr007.github.io/capstone-/static/media/RandomVsSystematic.e9f2ad5a0c8775bafe2e.png",
+    "static/media/PopulationVsSample.png": "//ttr007.github.io/capstone-/static/media/PopulationVsSample.e92c995985ffcc454a32.png",
+    "static/media/Mod2.png": "//ttr007.github.io/capstone-/static/media/Mod2.107e077a454534a41333.png",
+    "static/media/MissingData.png": "//ttr007.github.io/capstone-/static/media/MissingData.498f18616316460e615b.png",
+    "static/media/IQR.png": "//ttr007.github.io/capstone-/static/media/IQR.113fb297020aadfd6295.png",
+    "static/media/PercentDecrease.png": "//ttr007.github.io/capstone-/static/media/PercentDecrease.6d287177d458e2b9c41b.png",
+    "static/media/PercentIncrease.png": "//ttr007.github.io/capstone-/static/media/PercentIncrease.f3b948f5b228307e4f9d.png",
+    "static/media/Mod8.png": "//ttr007.github.io/capstone-/static/media/Mod8.cf17434b1c9236e494db.png",
+    "static/media/ScatterPlotOutlier.png": "//ttr007.github.io/capstone-/static/media/ScatterPlotOutlier.b597c5bad64b7ad33185.png",
+    "static/media/BoxPlotOutlier.png": "//ttr007.github.io/capstone-/static/media/BoxPlotOutlier.464981dc64bd370aa4c4.png",
+    "index.html": "//ttr007.github.io/capstone-/index.html",
+    "main.bfa0d07f.css.map": "//ttr007.github.io/capstone-/static/css/main.bfa0d07f.css.map",
+    "main.862ecdb6.js.map": "//ttr007.github.io/capstone-/static/js/main.862ecdb6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bfa0d07f.css",
+    "static/js/main.862ecdb6.js"
+  ]
+}
