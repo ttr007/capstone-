@@ -4,27 +4,60 @@ import ListBlock from '../components/ListBlock';
 import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
+import ImageBlock from '../components/ImageBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
+import ModuleIntro from '../components/ModuleIntro';
 
+import graph from './graph.png'
+
+
+const overview = (
+    <div className="overview-text">
+        <p>
+            Did the result happen for a real reason, or was it just chance? When analyzing your data, you might find a pattern. But before acting on it, ask:
+        </p>
+        <p style={{ paddingLeft: '20px', fontStyle: 'italic' }}>
+            "Could this have happened by coincidence?"
+        </p>
+    </div>
+);
+
+const toc = (
+    <div className="toc-container">
+        <h5>Table of Contents</h5>
+        <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
+            <li><a href="#what-is-statistical-significance">What is Statistical Significance?</a></li>
+            <li><a href="#p-value">How It's Measured: P-value</a></li>
+            <li><a href="#statistically-vs-practically">Statistically Significant vs Practically Important</a></li>
+            <li><a href="#why-it-matters">Why It Matters</a></li>
+        </ul>
+    </div>
+);
 
 export function ModuleSix() {
-
     return (
         <ModulePage
             title="Statistical Significance"
-            url="https://www.youtube.com/embed/dQw4w9WgXcQ">
-
-            <ParaBlock
-                items={[<span key="1">Did the result happen for a real reason, or was it just chance?</span>]}
+            url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        >
+            <ModuleIntro
+                title="Statistical Significance"
+                readTime="5 min read"
+                overview={overview}
+                toc={toc}
             />
-
-            <ListBlock
-                items={[
-                    <a href="#what-is-statistical-significance" key="1">What is Statistical Significance?</a>,
-                    <a href="#how-its-measured" key="2">How it's Measured</a>,
-                    <a href="#why-it-matters" key="8">Why It Matters</a>
-                ]}
-            />
+            <div id="summary">
+                <ListBlock
+                    title="Summary"
+                    items={[
+                        <span key="1"><strong>Statistical significance</strong> = The result is unlikely to be due to chance.</span>,
+                        <span key="2"><strong>p-value</strong> = Tells how likely it is the result happened randomly.</span>,
+                        <span key="3">A low p-value (&lt; 0.05) suggests a real effect, not just coincidence.</span>,
+                        <span key="4">Statistical significance doesn't always mean the result matters in real life.</span>,
+                        <span key="5">Helps us trust data and make better decisions.</span>
+                    ]}
+                />
+            </div>
 
             <div id="what-is-statistical-significance">
                 <ParaBlock title="What is Statistical Significance?" />
@@ -33,26 +66,35 @@ export function ModuleSix() {
             <CalloutBlock
                 type="info"
                 title="Statistical Significance"
-                description={[<span key="1">A result is statistically significant when it’s unlikely to have occurred by chance.</span>]}
+                description={[
+                    <span key="1">A result is statistically significant when it’s unlikely to have occurred by chance.</span>
+                ]}
             />
 
-            <div id="how-its-measured">
-                <ParaBlock items={[
-                    <span>When analyzing your data, you might find a pattern. But before acting on it, ask:</span>,
-                    <span style={{ paddingLeft: '20px' }}>"Could this have happened by coincidence?"</span>
-                ]} />
-            </div>
+            <CalloutBlock
+                title="Example: Membership Program"
+                type="example"
+                description={[
+                    <span key="1">Pierce County launches a pilot mentorship program aimed at reducing youth reoffending.</span>,
+                    <ul key="2">
+                        <li>10% of mentored youth reoffended</li>
+                        <li>20% of non-mentored youth reoffended</li>
+                    </ul>,
+                    <span key="3">To determine if the difference is meaningful, we use statistical significance.</span>,
+                    <span key="4">If the result is statistically significant (e.g., p &lt; 0.05), we can be more confident that the mentorship program had a real impact—not just a difference due to chance.</span>
+                ]}
+            />
 
-            <div id="how-it’s-measured">
-                <ParaBlock
-                    title="How it’s Measured: The p-value"
-                />
+            <div id="p-value">
+                <ParaBlock title="How it’s Measured: The p-value" />
             </div>
 
             <CalloutBlock
                 type="info"
                 title="P-value"
-                description={[<span key="1">The probability that your results happened by chance.</span>]}
+                description={[
+                    <span key="1">The probability that your results happened by chance.</span>
+                ]}
             />
 
             <ListBlock
@@ -63,43 +105,42 @@ export function ModuleSix() {
             />
 
             <TableBlock
-                headers={["p-value", "Meaning", "Example"]}
+                headers={["P-value", "Meaning", "Example"]}
                 rows={[
-                    ["0.03", "There’s a 3% chance the result is due to chance → statistically significant", "Your new teaching method improves test scores"],
-                    ["0.20", "20% chance it’s random → not significant", "Your new sales technique may not actually work"]
+                    ["0.03% (<0.05)", "There’s a 3% chance the result is due to chance → statistically significant", "Your new teaching method improves test scores"],
+                    ["0.20% (>0.05)", "20% chance it’s random → not significant", "Your new sales technique may not actually work"]
                 ]}
             />
 
-            <div id="real-world-analogy">
-                <ParaBlock title="Real-World Analogy" items={[<span key="1">Adding a little salt doesn’t change the flavor, but adding a cup does.</span>]} />
-            </div>
+            <ImageBlock src={graph} />
 
-            <CalloutBlock title="Example: Membership Program" type="example" description={[
-                <ParaBlock items={[<span key="1">Pierce County launches a pilot mentorship program aimed at reducing youth reoffending.</span>]} />,
-                <ListBlock
-                    items={[
-                        "10% of mentored youth reoffended",
-                        "20% of non-mentored youth reoffended"
-                    ]}
-                />, <ParaBlock
-                    items={[
-                        <span key="1">To determine if the difference is meaningful, we use statistical significance.</span>,
-                        <span key="2">If the result is statistically significant (e.g., p &lt; 0.05), we can be more confident that the mentorship program had a real impact—not just a difference due to chance.</span>
-                    ]}
-                />]}
-            />
-
-            <CalloutBlock type="example" title="Example: COVID-19 Vaccine Trial" description={[<ParaBlock items={[<span key="1">The vaccine showed 95% efficacy with a p-value &lt; 0.0001.</span>]} />,
-            <ListBlock
-                items={[
-                    <span>95% efficacy rate & p-value &lt; 0.0001</span>,
-                    <span>That means there was <strong>less than 0.01% </strong> chance the result happened by chance</span>
+            <CalloutBlock
+                title="Example: COVID-19 Vaccine Trial"
+                type="example"
+                description={[
+                    <span key="1">The vaccine showed 95% efficacy with a p-value &lt; 0.0001.</span>,
+                    <ul key="2">
+                        <li>95% efficacy rate & p-value &lt; 0.0001</li>
+                        <li>That means there was less than 0.01% chance the result happened by chance</li>
+                    </ul>
                 ]}
             />
-            ]} />
+
+            <CalloutBlock
+                title="Example: Real-World Analogy"
+                type="example"
+                description={[
+                    <span key="1">Adding a little salt doesn’t change the flavor, but adding a cup does.</span>
+                ]}
+            />
 
             <div id="statistically-vs-practically">
-                <ParaBlock title="Statistically Significant ≠ Practically Important" items={[<span key="1">A result may be statistically significant but not practically important in the real world.</span>]} />
+                <ParaBlock
+                    title="Statistically Significant ≠ Practically Important"
+                    items={[
+                        <span key="1">A result may be statistically significant but not practically important in the real world.</span>
+                    ]}
+                />
             </div>
 
             <TableBlock
@@ -110,36 +151,35 @@ export function ModuleSix() {
                 ]}
             />
 
-            <CalloutBlock title="Example: County Wide Survey"
+            <CalloutBlock
+                title="Example: County Wide Survey"
                 type="example"
                 description={[
                     <span key="1">Pierce County conducts county-wide surveys to assess public trust in local government services.</span>,
-                    <ListBlock
-                        items={[
-                            "In 2023, 65% of residents reported trust in local services",
-                            "In 2024, that number rose to 70% — a 5% increase"
-                        ]}
-                    />, <ParaBlock
-                        items={[
-                            <span>However, if only a small number of people were surveyed, we need to ask:</span>,
-                        ]}
-                    />,
-                    <ListBlock
-                        items={[
-                            "Is this increase due to real change, or could it be chance?"
-                        ]} />,
-                    <ParaBlock items={[<span key="2">Using statistical significance (like checking if p &lt; 0.05), we can determine if the increase reflects a meaningful shift in public sentiment—or if it might be the result of chance due to a small sample size.</span>
-                    ]}
-                    />
-                ]} />
+                    <ul key="2">
+                        <li>In 2023, 65% of residents reported trust in local services</li>
+                        <li>In 2024, that number rose to 70% — a 5% increase</li>
+                    </ul>,
+                    <span key="3">However, if only a small number of people were surveyed, we need to ask:</span>,
+                    <ul key="4">
+                        <li>Is this increase due to real change, or could it be chance?</li>
+                    </ul>,
+                    <span key="5">Using statistical significance (like checking if p &lt; 0.05), we can determine if the increase reflects a meaningful shift in public sentiment—or if it might be the result of chance due to a small sample size.</span>
+                ]}
+            />
 
             <div id="why-it-matters">
-                <ListBlock title="Why It Matters" items={[
-                    <span key="1">Helps us know which results we can trust</span>,
-                    <span key="2">Reduces guesswork and assumptions in decision-making</span>,
-                    <span key="3">Keeps us from making choices based on random variation</span>
-                ]} />
+                <ParaBlock title="Why It Matters" level={1} items={[]} />
+
+                <ListBlock
+                    items={[
+                        <span key="1">Helps us know which results we can trust</span>,
+                        <span key="2">Reduces guesswork and assumptions in decision-making</span>,
+                        <span key="3">Keeps us from making choices based on random variation</span>
+                    ]}
+                />
             </div>
+
             <AdditionalSourcesBlock
                 sources={[
                     {

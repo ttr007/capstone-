@@ -15,6 +15,7 @@ const ModuleBar = () => {
       const bsOffcanvas = Offcanvas.getOrCreateInstance(offcanvasEl);
       bsOffcanvas.show();
     }
+
     const handleShow = () => {
       mainContent?.classList.add('main-content-shifted');
     };
@@ -31,16 +32,16 @@ const ModuleBar = () => {
       offcanvasEl.removeEventListener('hidden.bs.offcanvas', handleHide);
     };
   }, []);
+
   const modules = [
     { title: 'Sampling', icon: 'bi-circle-half', time: '6 min read', link: '/sampling' },
     { title: 'Change Over Time', icon: 'bi-alarm', time: '5 min read', link: '/change-over-time' },
     { title: 'Relationships', icon: 'bi-table', time: '7 min read', link: '/relationships' },
-    { title: 'Patterns and Variability', icon: 'bi-bar-chart', time: '5 min read', link: '/patterns-and-variability' },
+    { title: 'Patterns and Variability', icon: 'bi-bar-chart', time: '7 min read', link: '/patterns-and-variability' },
     { title: 'Uncertainty', icon: 'bi-question-circle', time: '4 min read', link: '/uncertainty' },
     { title: 'Statistical Significance', icon: 'bi-clipboard-data', time: '5 min read', link: '/statistical-significance' },
     { title: 'Social Implications', icon: 'bi-people', time: '6 min read', link: '/social-implications' },
-
-    { title: 'Skewing the Data', icon: 'bi-graph-up-arrow', time: '4 min read', link: '/skewing-the-data' }
+    { title: 'Skewing the Data', icon: 'bi-graph-up-arrow', time: '7 min read', link: '/skewing-the-data' }
   ];
 
   return (
@@ -60,8 +61,16 @@ const ModuleBar = () => {
         zIndex: 99,
       }}
     >
-      <div className="offcanvas-header">
-        <h6 className="offcanvas-title text-black d-none d-sm-block">Modules</h6>
+      <div
+        className="offcanvas-header"
+        style={{ marginBottom: '0', paddingBottom: '0' }}
+      >
+        <h6
+          className="offcanvas-title text-black d-none d-sm-block"
+          style={{ fontSize: '1.25rem' }}
+        >
+          Modules
+        </h6>
         <button
           type="button"
           className="btn-close btn-close-white text-reset"
@@ -69,7 +78,11 @@ const ModuleBar = () => {
           aria-label="Close"
         ></button>
       </div>
-      <div className="offcanvas-body px-0">
+
+      <div
+        className="offcanvas-body px-0"
+        style={{ paddingTop: '0' }}
+      >
         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
           {modules.map((mod, i) => {
             const isActive = currentPath === mod.link;
@@ -85,10 +98,9 @@ const ModuleBar = () => {
               >
                 <a
                   href={mod.link}
-                  className={`nav-link text-black d-flex align-items-center ${isActive ? 'fw-bold' : ''}`}
+                  className="nav-link text-black d-flex align-items-center"
                   style={{ height: '100%' }}
                 >
-                  {/* Icon */}
                   <div
                     className="d-flex align-items-center justify-content-center me-3"
                     style={{ width: '40px', height: '100%' }}
@@ -98,14 +110,11 @@ const ModuleBar = () => {
                       style={{ fontSize: '1.75rem' }}
                     ></i>
                   </div>
-
-                  {/* Text */}
                   <div
                     className="d-flex flex-column justify-content-center align-items-start"
                     style={{ height: '100%' }}
                   >
                     <span
-                      className="fw-semibold"
                       style={{
                         lineHeight: '1.2',
                         overflow: 'hidden',

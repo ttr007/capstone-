@@ -5,40 +5,60 @@ import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
 import FormulaBlock from '../components/FormulaBlock';
+import ImageBlock from '../components/ImageBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
+import ModuleIntro from '../components/ModuleIntro';
 
+import missing from './MissingData.png';
+import iqr from './IQR.png';
+import bpo from './BoxPlotOutlier.png';
+import spo from './ScatterPlotOutlier.png';
+
+const overview = (
+  <div id="intro">
+    <ParaBlock
+      items={[
+        <span key="1">
+          Some data entries—whether missing or extreme—can <strong>distort your results</strong> and lead to misleading conclusions. Understanding <strong>how to recognize and handle these values</strong>—especially missing data and outliers—is essential to making fair, accurate, and useful decisions based on your data.
+        </span>
+      ]}
+    />
+  </div>
+);
+
+const toc = (
+  <div className="toc-container">
+    <h5>Table of Contents</h5>
+    <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
+      <li><a href="#missing-data">Missing Data</a></li>
+      <li><a href="#how-to-handle-missing-data">How to Handle Missing Data</a></li>
+      <li><a href="#outliers">What is an Outlier</a></li>
+      <li><a href="#what-to-do-with-outliers">How to Approach Outliers</a></li>
+      <li><a href="#types-of-outliers">Types of Outliers</a></li>
+      <li><a href="#statistical-methods">How to Spot Outliers</a></li>
+      <li><a href="#impact-of-skew">The Impact of Skewed Data</a></li>
+      <li><a href="#why-it-matters">Why It Matters</a></li>
+    </ul>
+  </div>
+);
 
 export function ModuleEight() {
-    return (
-        <ModulePage title="Skewing the Data" url="https://www.youtube.com/embed/dQw4w9WgXcQ">
-
-            <div id="intro">
-                <ParaBlock
-                    items={[
-                        <span key="1">Some data entries—whether missing or extreme—can <strong>distort your results</strong> and lead to misleading conclusions.</span>
-                    ]}
-                />
-
-                <ParaBlock
-                    items={[
-                        <span key="1"><strong>Understanding how to recognize and handle these values</strong>—especially missing data and outliers—is essential to making fair, accurate, and useful decisions based on your data.</span>
-                    ]}
-                />
-            </div>
-
-            <div id="table-of-contents">
-                <ListBlock
-                    items={[
-                        <a href="#missing-data" key="1">Missing Data</a>,
-                        <a href="#outliers" key="2">Outliers</a>,
-                        <a href="#why-it-matters" key="3">Why It Matters</a>
-                    ]}
-                />
-            </div>
+  return (
+    <ModulePage
+      title="Skewing the Data"
+      url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    >
+      <ModuleIntro
+        title="Skewing the Data"
+        readTime="7 min read"
+        overview={overview}
+        toc={toc}
+      />
 
             <div id="summary">
+                <ParaBlock title="Summary" level={1} items={[]} />
+
                 <ListBlock
-                    title="Summary"
                     items={[
                         <span key="1"><strong>Missing data</strong> occurs when information is incomplete, often causing bias or weak conclusions.</span>,
                         <span key="2"><strong>Outliers</strong> are data points that don’t fit the trend and can skew the results.</span>,
@@ -49,13 +69,9 @@ export function ModuleEight() {
             </div>
 
             <div id="missing-data">
-                <ParaBlock
-                    title="Missing Data"
-                    items={[
-                        <span key="1">Missing data is often unavoidable, but if left unaddressed, it can introduce <strong>bias</strong> or make your conclusions <strong>inconclusive</strong>.</span>
-                    ]}
-                />
-
+                <ParaBlock title="Missing Data" level={1} items={[
+                    <span key="1">Missing data is often unavoidable, but if left unaddressed, it can introduce <strong>bias</strong> or make your conclusions <strong>inconclusive</strong>.</span>
+                ]} />
                 <CalloutBlock
                     type="info"
                     title="Missing Data"
@@ -63,7 +79,6 @@ export function ModuleEight() {
                         <span key="1">Gaps in your dataset caused by skipped questions, tech issues, or participant drop-off.</span>
                     ]}
                 />
-
                 <TableBlock
                     headers={["Type", "Description", "Example"]}
                     rows={[
@@ -72,7 +87,6 @@ export function ModuleEight() {
                         ["MNAR (Missing Not at Random)", "Missing because of the thing being measured", "Unhappy employees avoid a workplace survey"]
                     ]}
                 />
-
                 <CalloutBlock
                     type="warning"
                     title="Skewing"
@@ -80,7 +94,9 @@ export function ModuleEight() {
                         <span key="1">Missing data—especially MNAR—can hide important truths and create bias in decision-making.</span>
                     ]}
                 />
+            </div>
 
+            <div id="how-to-handle-missing-data">
                 <ListBlock
                     title="How to Handle Missing Data"
                     items={[
@@ -90,32 +106,41 @@ export function ModuleEight() {
                         <span key="4">Be <strong>transparent</strong> when reporting missing data and its potential effects</span>
                     ]}
                 />
+                <CalloutBlock type="example" title="Example: Missing Data"
+                    description={["In the example below, missing data (NaN) is handled by using the previous entry to fill in the data"]}
+                />
+                <ImageBlock src={missing} />
             </div>
 
             <div id="outliers">
-                <ParaBlock
-                    title="Outliers"
-                    items={[
-                        <span key="1"> Outliers are data points that are much higher or lower than the rest of the dataset.</span>
-                    ]}
-                />
-
+                <ParaBlock title="What is an Outlier?" level={1} items={[
+                    <span key="1">Outliers are data points that are significantly different from the rest of your dataset. They can pull your results in misleading directions.</span>
+                ]} />
                 <CalloutBlock
                     type="info"
                     title="Outliers"
                     description={[
-                        <span key="1">Data points that are much higher or lower than the rest of the dataset.</span>
+                        <span key="1">Unusual values that lie far outside the overall pattern of a dataset. They may be errors—or important signals.</span>
                     ]}
                 />
+            </div>
+
+            <div id="what-to-do-with-outliers">
+                <ParaBlock title="How to Approach Outliers" level={1} items={[]} />
 
                 <ListBlock
                     items={[
-                        <span key="1"><strong>Outliers can be mistakes—or important findings.</strong> It’s important to know when they matter.</span>,
-                        <span key="2">Some outliers result from errors, like a mistyped number. But others might reveal something meaningful.</span>,
-                        <span key="3">Understanding the <strong>context</strong> behind an outlier helps you decide if it should be kept or removed.</span>
+                        <span key="1"><strong>Don’t automatically delete:</strong> Investigate whether it’s a data entry mistake or a meaningful point.</span>,
+                        <span key="2"><strong>Check context:</strong> Some values are only “outliers” in certain settings.</span>,
+                        <span key="3"><strong>Document your decision:</strong> Be transparent about why you kept or removed them.</span>
                     ]}
                 />
+            </div>
 
+            <div id="types-of-outliers">
+                <ParaBlock title="Types of Outliers" level={1} items={[
+                    "Here are common types of outliers you may encounter in your data."
+                ]} />
                 <TableBlock
                     headers={["Type", "Description", "Example"]}
                     rows={[
@@ -128,64 +153,63 @@ export function ModuleEight() {
                 />
             </div>
 
-            <div id="how-to-spot-outliers">
-                <ParaBlock
-                    title="How to Spot Outliers"
-                    items={[
-                        <span key="1">You can spot outliers through <strong>visualizing data</strong> in the following ways:</span>
-                    ]}
-                />
-            </div>
-
             <div id="statistical-methods">
+                <ParaBlock title="How to Spot Outliers" level={1} items={[
+                    <span key="1">You can spot outliers through <strong>visualizing data</strong> or using statistical methods.</span>
+                ]} />
+                <ListBlock items={[
+                    <span><strong>Box Plots - </strong>Great for showing extreme values</span>
+                ]} />
+                <ImageBlock src={bpo} />
+                <ListBlock items={[
+                    <span><strong>Scatter Plots - </strong>Great for showing outliers in multi-variable relationships</span>
+                ]} />
+                <ImageBlock src={spo} />
                 <ListBlock
                     title="Statistical Methods"
                     items={[
-                        <span key="1">Z-score tells how <strong>far</strong> a point is from the average. If a score is very high or low, it might be an outlier.</span>,
+                        <span key="1">Z-score tells how <strong>far</strong> a point is from the average. If a score is very high or low, it might be an outlier.</span>
                     ]}
                 />
-                <FormulaBlock
-                >
+                <FormulaBlock>
                     <span key="sd-formula">z = (x - mean) / standard deviation</span>
                 </FormulaBlock>
                 <ListBlock
-                    items={[<span key="2">Interquartile Range (IQR) <strong>finds</strong> values that are far from the middle of the dataset.</span>
+                    items={[
+                        <span key="2">Interquartile Range (IQR) <strong>finds</strong> values that are far from the middle of the dataset.</span>
                     ]}
                 />
-                <FormulaBlock
-                >
-                    <span key="sd-formula">Outliers = values &lt; Q1 - 1.5 * IQR OR values &gt;  Q3 + 1.5 * IQR </span>
+                <FormulaBlock>
+                    <span key="iqr-formula">Outliers = values &lt; Q1 - 1.5 * IQR OR values &gt; Q3 + 1.5 * IQR</span>
                 </FormulaBlock>
+                <ImageBlock src={iqr} />
             </div>
 
-            <div id="what-to-do-with-outliers">
-                <ListBlock
-                    title="What to Do With Outliers"
-                    items={[
-                        <span key="1">Keep them if they show something important (e.g., a new trend or at-risk group).</span>,
-                        <span key="2">Remove or correct them if they are mistakes or skew your analysis unfairly.</span>,
-                        <span key="3">Don’t delete outliers without understanding <strong>why</strong> they exist.</span>
+            <div id="impact-of-skew">
+                <ParaBlock title="The Impact of Skewed Data" level={1} />
+                <ParaBlock items={[
+                    <span key="1">Here’s how skewed data—if left unchecked—can affect your conclusions:</span>
+                ]} />
+                <TableBlock
+                    headers={["Problem", "Impact"]}
+                    rows={[
+                        ["Too much missing data", "Weakens conclusions, introduces bias"],
+                        ["Ignored outliers", "Can lead to missed insights or flawed decisions"],
+                        ["Misrepresented data", "Leads to unfair outcomes or misleading policy"]
                     ]}
                 />
             </div>
 
-            <TableBlock
-                headers={["Problem", "Impact"]}
-                rows={[
-                    ["Too much missing data", "Weakens conclusions, introduces bias"],
-                    ["Ignored outliers", "Can lead to missed insights or flawed decisions"],
-                    ["Misrepresented data", "Leads to unfair outcomes or misleading policy"]
-                ]}
-            />
             <div id="why-it-matters">
-
+                <ParaBlock title="Why It Matters" level={1} items={[]} />
                 <ListBlock
-                    title="Why It Matters"
                     items={[
-                        <span key="1">Every data point tells a story. Some are noise—others are warning signs. Knowing the difference is essential to forming accurate conclusions.</span>
+                        <span key="1">Every data point tells a story. Some are noise—others are warning signs. Knowing the difference is essential to forming accurate conclusions.</span>,
+                        <span key="2">Being aware of missing data and outliers helps ensure your conclusions are fair, accurate, and reliable. Don’t just clean your data—<strong>understand it</strong>.</span>
                     ]}
                 />
             </div>
+
             <AdditionalSourcesBlock
                 sources={[
                     {

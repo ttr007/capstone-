@@ -7,35 +7,43 @@ import FormulaBlock from '../components/FormulaBlock';
 import ImageBlock from '../components/ImageBlock';
 import TableBlock from '../components/TableBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
-
+import ModuleIntro from '../components/ModuleIntro';
 
 import PercentIncrease from './PercentIncrease.png';
 import PercentDecrease from './PercentDecrease.png';
 
+const overview = (
+  <div className="overview-text">
+    <p>
+      How do we track progress—or spot problems—over time? Together, these help you tell stories with data—so you can <strong>measure impact</strong>, <strong>make smart decisions</strong>, and <strong>communicate clearly</strong>.
+    </p>
+  </div>
+);
+
+const toc = (
+  <div className="toc-container">
+    <h5>Table of Contents</h5>
+    <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
+      <li><a href="#percentage-change">Percentage Change</a></li>
+      <li><a href="#percentage-point-difference">Percentage Point Difference</a></li>
+      <li><a href="#real-world-applications">Real World Applications</a></li>
+      <li><a href="#why-it-matters">Why it Matters</a></li>
+    </ul>
+  </div>
+);
+
 export function ModuleTwo() {
   return (
     <ModulePage
-      title="Change over Time"
+      title="Change Over Time"
+      url="https://www.youtube.com/embed/VIDEO_ID" // Replace with actual video URL if available
     >
-      <ParaBlock
-        items={[
-          <span>How do we track progress—or spot problems—over time?
-            Together, these help you tell stories with data—so you can <strong>measure impact</strong>, <strong>make smart decisions</strong>, and <strong>communicate clearly</strong>.
-          </span>,
-        ]}
+      <ModuleIntro
+        title="Change Over Time"
+        readTime="5 min read"
+        overview={overview}
+        toc={toc}
       />
-
-      <div id="table-of-contents">
-        <ListBlock
-          title="Table of Contents"
-          level={1}
-          items={[
-            <span><a href="#percentage-change">Percentage Change</a></span>,
-            <span><a href="#percentage-point-difference">Percentage Point Difference</a></span>,
-            <span><a href="#why-it-matters">Why it Matters</a></span>
-          ]}
-        />
-      </div>
 
       <ListBlock
         title="Summary"
@@ -48,35 +56,44 @@ export function ModuleTwo() {
       />
 
       <div id="percentage-change">
-        <ParaBlock title="Percentage Change" 
-                level={1}
-                />
+        <ParaBlock title="Percentage Change" level={1} />
       </div>
-      <CalloutBlock type="info" title="Percentage Change" description="A way to show how much something has grown or shrunk over time, relative to its starting value." />
+      <CalloutBlock
+        type="info"
+        title="Percentage Change"
+        description="A way to show how much something has grown or shrunk over time, relative to its starting value."
+      />
 
-
-      <ParaBlock title="Formula" items={[
+      <ParaBlock title="Formula" level={2} items={[
         <FormulaBlock>
           ((New Value - Original Value) / Original Value) * 100
         </FormulaBlock>
       ]} />
 
-      <CalloutBlock title="Example: HR Statistics" type="example" description={[
-        <ListBlock items={[
-          "You work in HR:",
-          "Last Year: 85% employee retention",
-          "This Year: 88.55% employee retention",
-        ]} />
-      ]} />
+      <ParaBlock title="Example: HR Statistics" level={2} />
+      <CalloutBlock
+        type="example"
+        description={[
+          <ListBlock items={[
+            "You work in HR:",
+            "Last Year: 85% employee retention",
+            "This Year: 88.55% employee retention",
+          ]} />
+        ]}
+      />
       <FormulaBlock>
         ((88.55 - 85) / 85) * 100 = 4.18% change
       </FormulaBlock>
-      <CalloutBlock title="Example: HR Statistics continued" type="example" description={[
-        <ListBlock items={[
-          "Employee retention increased by 4.18% compared to last year.",
-          "Why it matters: Percentage change helps you track progress over time—whether you're improving retention, reducing turnover, or evaluating the impact of new policies."
-        ]} />
-      ]} />
+      <CalloutBlock
+        title="Example: HR Statistics continued"
+        type="example"
+        description={[
+          <ListBlock items={[
+            "Employee retention increased by 4.18% compared to last year.",
+            "Why it matters: Percentage change helps you track progress over time—whether you're improving retention, reducing turnover, or evaluating the impact of new policies."
+          ]} />
+        ]}
+      />
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
         <ImageBlock src={PercentIncrease} style={{ width: '50%' }} />
@@ -84,36 +101,46 @@ export function ModuleTwo() {
       </div>
 
       <div id="percentage-point-difference">
-        <ParaBlock title="Percentage Point Difference" />
+        <ParaBlock title="Percentage Point Difference" level={1} />
       </div>
-
       <CalloutBlock
         type="info"
         title="Percentage Point Difference"
         description="A way to show how much the percentage itself has changed."
       />
 
-      <h3>Formula for percentage point difference:</h3>
-      <FormulaBlock>Percentage 2 - Percentage 1</FormulaBlock>
-      <CalloutBlock title="Example: PPW" type="example" description={[
-
-        <ListBlock items={[
-          'Let’s say you work in Planning and Public Works (PPW):',
-          'In 2023: 78% of planned road projects were completed',
-          'In 2024: 80% were completed'
-        ]} />
+      <ParaBlock title="Formula: Percentage Point Difference" level={2} items={[
+        <FormulaBlock>
+          Percentage 2 - Percentage 1
+        </FormulaBlock>
       ]} />
 
+      <ParaBlock title="Example: PPW" level={2} />
+      <CalloutBlock
+        type="example"
+        description={[
+          <ListBlock items={[
+            'Let’s say you work in Planning and Public Works (PPW):',
+            'In 2023: 78% of planned road projects were completed',
+            'In 2024: 80% were completed'
+          ]} />
+        ]}
+      />
 
-      <FormulaBlock title="">80% - 78% = 2%</FormulaBlock>
-      <CalloutBlock title="Example: PPW cont." type="example" description={[
-
-        <ListBlock items={[<span>The completion rate increased by <strong>2 percentage points</strong>, even though the percent change would be a smaller relative shift.</span>,
-        ]} />
-      ]} />
+      <FormulaBlock>80% - 78% = 2%</FormulaBlock>
 
       <CalloutBlock
-      type = "success"
+        title="Example: PPW cont."
+        type="example"
+        description={[
+          <ListBlock items={[
+            <span>The completion rate increased by <strong>2 percentage points</strong>, even though the percent change would be a smaller relative shift.</span>,
+          ]} />
+        ]}
+      />
+
+      <CalloutBlock
+        type="success"
         description={[
           <p><strong>Percentage point difference</strong> is especially useful when you're comparing percentages directly—like completion rates, graduation rates, or voter turnout.</p>,
           <p>Unlike percent change, it tells you how much the actual <strong>percent value itself</strong> increased or decreased.</p>
@@ -121,8 +148,8 @@ export function ModuleTwo() {
       />
 
       <div id="real-world-applications">
+        <ParaBlock title="Real-World Applications" level={1} />
         <TableBlock
-          title="Real-World Applications"
           headers={['Field', 'Question']}
           rows={[
             ['Business', 'Measure growth in profits, losses, or customer retention.'],
@@ -133,20 +160,29 @@ export function ModuleTwo() {
         />
       </div>
 
-      <CalloutBlock title="Common Mistakes to Avoid" type="warning" description={[
-        <ListBlock items={[
-          <span>Mixing up <strong>percentage change</strong> and <strong>percentage points</strong></span>,
-          'Assuming 50% → 75% is a 25% increase (it’s 25 percentage points, but a 50% increase!)',
-          'Forgetting to divide by the original value when calculating percentage change'
-        ]} />
-      ]} />
+      <CalloutBlock
+        type="warning"
+        title="Common Mistakes to Avoid"
+        description={[
+          <ListBlock items={[
+            <span>Mixing up <strong>percentage change</strong> and <strong>percentage points</strong></span>,
+            'Assuming 50% → 75% is a 25% increase (it’s 25 percentage points, but a 50% increase!)',
+            'Forgetting to divide by the original value when calculating percentage change'
+          ]} />
+        ]}
+      />
 
       <div id="why-it-matters">
-        <ListBlock title="Why It Matters" items={[
-          'Understanding percentage change and percentage point different helps you analyze real-world data more accurately.',
-          'Whether you’re working in policy, business, or daily life, these concepts guide smarter actions and better communication.'
-        ]} />
+        <ListBlock
+          title="Why It Matters"
+          level={1}
+          items={[
+            'Understanding percentage change and percentage point different helps you analyze real-world data more accurately.',
+            'Whether you’re working in policy, business, or daily life, these concepts guide smarter actions and better communication.'
+          ]}
+        />
       </div>
+
       <AdditionalSourcesBlock
         sources={[
           {

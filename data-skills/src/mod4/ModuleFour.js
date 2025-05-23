@@ -7,6 +7,7 @@ import FormulaBlock from '../components/FormulaBlock';
 import TableBlock from '../components/TableBlock';
 import ImageBlock from '../components/ImageBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
+import ModuleIntro from '../components/ModuleIntro';
 
 import skewleft from './image (1).png';
 import uniform from './image (2).png';
@@ -14,43 +15,59 @@ import skewright from './image (3).png';
 import unimodal from './image (4).png';
 import stdf from './notion3.png';
 
+const overview = (
+    <div className="overview-text">
+        <p>
+            Understanding the <strong>shape</strong>, <strong>spread</strong>, and <strong>trends</strong> of data reveal the story behind the numbers. There are also many numbers related to the shape, so picking the best option for different types of number sets is important. This module covers:
+        </p>
+    </div>
+);
+
+const toc = (
+    <div className="toc-container">
+        <h5>Table of Contents</h5>
+        <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
+            <li><a href="#distribution">Distribution</a></li>
+            <li><a href="#variance">Variance</a></li>
+            <li><a href="#standard-deviation">Standard Deviation</a></li>
+            <li><a href="#averages-vs-means">Averages vs. Means</a></li>
+            <li><a href="#mean-median-mode">Mean, Median, Mode</a></li>
+            <li><a href="#why-it-matters">Why It Matters</a></li>
+        </ul>
+    </div>
+);
+
 export function ModuleFour() {
     return (
         <ModulePage
             title="Patterns and Variability"
-            url="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with actual video if needed
+            url="https://www.youtube.com/embed/VIDEO_ID" // Replace with actual video URL if available
         >
-            <ParaBlock
-                items={[
-                    <span key="intro">Understanding the <strong>shape</strong>, <strong>spread</strong>, and <strong>trends</strong> of data reveal the story behind the numbers. This module covers:</span>,
-                ]}
+            <ModuleIntro
+                title="Patterns and Variability"
+                readTime="7 min read"
+                overview={overview}
+                toc={toc}
             />
 
             <ListBlock
-                title="Table of Contents"
+                title="Summary"
                 items={[
-                    <a href="#distribution" key="distribution">Distribution</a>,
-                    <a href="#variance" key="variance">Variance</a>,
-                    <a href="#standard-deviation" key="standard-deviation">Standard Deviation</a>,
-                    <a href="#averages-vs-means" key="averages-vs-means">Averages vs. Means</a>,
-                    <a href="#why-it-matters" key="why-it-matters">Why It Matters</a>,
-                ]}
-            />
-
-            <ParaBlock
-                items={[
-                    <span key="data-summary">By understanding how values are distributed and how much they vary, you’ll be better equipped to <strong>spot patterns</strong>, <strong>detect outliers</strong>, and <strong>make informed decisions</strong>.</span>,
+                    "Patterns in data help reveal trends and important differences.",
+                    "Distribution shows the shape of your data—how values are spread out.",
+                    "Variance and standard deviation tell you how much the data values differ.",
+                    <span><strong>Averages aren’t all the same:</strong> mean, median, and mode each tell a different story.</span>,
+                    <span>These tools help you make smarter decisions by understanding what the data is really saying.</span>
                 ]}
             />
 
             <div id="distribution">
-                <ParaBlock title="Distribution" items={[]} />
+                <ParaBlock title="Distribution" level={1} items={[]} />
                 <CalloutBlock
                     type="info"
                     title="Distribution"
                     description="Describes how frequently certain values appear and the overall shape of the dataset."
                 />
-
                 <TableBlock
                     title="Types of Distribution"
                     headers={['Type', 'Description', 'Example']}
@@ -73,15 +90,15 @@ export function ModuleFour() {
                     items={[
                         <span key="distribution-explanation">Understanding <strong>distribution</strong> can help assess equity, access, and consistency. For example:</span>,
                         <ul key="distribution-examples">
-                            <li><strong>Equity index</strong>: Distribution of access to transportation, parks, or healthcare across neighborhoods can reveal service gaps.</li>
-                            <li><strong>Human Services</strong>: Distribution of food assistance uptake by ZIP code could indicate issues with outreach or accessibility.</li>
+                            <li><strong>Equity index:</strong> Distribution of access to transportation, parks, or healthcare across neighborhoods can reveal service gaps.</li>
+                            <li><strong>Human Services:</strong> Distribution of food assistance uptake by ZIP code could indicate issues with outreach or accessibility.</li>
                         </ul>
                     ]}
                 />
             </div>
 
             <div id="variance">
-                <ParaBlock title="Variance" items={[]} />
+                <ParaBlock title="Variance" level={1} items={[]} />
                 <CalloutBlock
                     type="info"
                     title="Variance"
@@ -108,7 +125,7 @@ export function ModuleFour() {
             </div>
 
             <div id="standard-deviation">
-                <ParaBlock title="Standard Deviation" items={[]} />
+                <ParaBlock title="Standard Deviation" level={1} items={[]} />
                 <CalloutBlock
                     type="info"
                     title="Standard Deviation"
@@ -120,36 +137,48 @@ export function ModuleFour() {
                         <span key="sd-high">High standard deviation: Values are far from the mean.</span>,
                     ]}
                 />
-                <ParaBlock
-                    title="Forumla"
-                    items={[
-                        <FormulaBlock
-                            title="Standard Deviation Formula"
-                        >
-                            <span key="sd-formula">σ = √(Σ(xi - μ)² / N)</span>
-                        </FormulaBlock>]}
-                />
-
+                <ParaBlock title="Formula" level={2} items={[
+                    <FormulaBlock title="Standard Deviation Formula">
+                        <span key="sd-formula">σ = √(Σ(xi - μ)² / N)</span>
+                    </FormulaBlock>
+                ]} />
+                <ImageBlock src={stdf} />
             </div>
 
             <div id="averages-vs-means">
-                <ParaBlock title="Averages vs. Means" items={[]} />
+                <ParaBlock title="Averages vs. Means" level={1} items={[]} />
                 <CalloutBlock
                     type="info"
                     title="Mean"
                     description="The sum of all numbers divided by the number of values."
                 />
-                <ListBlock>
+                <ListBlock
                     items={[
                         <span key="mean-definition">Best to use when your data is <strong>normal</strong> and <strong>balanced</strong>.</span>,
-                        <span key="median-definition">Median: The middle number in an ordered dataset.</span>,
-                        <span key="mode-definition">Mode: The most frequent occurring value in the dataset.</span>
+                        <span key="median-definition">If everything is normal, then the average won't be getting dragged by outliers.</span>,
                     ]}
-                </ListBlock>
+                />
+            </div>
+
+            <div id="mean-median-mode">
+                <ParaBlock title="Mean, Median, and Mode" level={1} items={[]} />
+                <CalloutBlock
+                    type="info"
+                    title="What are Mean, Median, and Mode?"
+                    description="These are three common ways to find the 'average' in a set of numbers. Each tells a different part of the story."
+                />
+                <ListBlock
+                    items={[
+                        <span key="mean"><strong>Mean:</strong> Add up all the numbers, then divide by how many there are. This is the typical average.</span>,
+                        <span key="median"><strong>Median:</strong> Line up the numbers in order and find the one in the middle. This helps when there are extreme values.</span>,
+                        <span key="mode"><strong>Mode:</strong> The number that appears the most. Useful when one number stands out.</span>,
+                        <span key="tip">Choose the one that best fits your data. For example, use median if your data has outliers that could skew the mean.</span>
+                    ]}
+                />
             </div>
 
             <div id="why-it-matters">
-                <ParaBlock title="Why It Matters" items={[
+                <ParaBlock title="Why It Matters" level={1} items={[
                     "Understanding distribution, variance, standard deviation, and averages helps you:",
                 ]} />
                 <ListBlock
@@ -159,7 +188,6 @@ export function ModuleFour() {
                         <span key="takeaway-3">Determine if the average gives a <strong>reliable summary</strong></span>
                     ]}
                 />
-
             </div>
 
             <ParaBlock

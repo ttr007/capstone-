@@ -50,8 +50,7 @@ const ModulePage = ({ title, url, children }) => {
         <ProgressBar />
         <div className="flex justify-between items-start gap-10">
           <div className="flex-1">
-            <h1 className="module-title fw-bold">{title}</h1>
-            <VideoBlock title="" url={url} />
+            <h1 className="module-title" style={{ fontSize: '60px' }}>{title}</h1>
           </div>
         </div>
         <div id="main-content">
@@ -70,7 +69,7 @@ const ModulePage = ({ title, url, children }) => {
             </Link>
           )}
         </div>
-            <Footer/>
+        <Footer />
       </main>
     </div>
   );

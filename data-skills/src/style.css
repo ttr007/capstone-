@@ -8,7 +8,34 @@
   padding-top: 100.67px;
 }
 
+.custom-offcanvas {
+  width: 260px !important;
+}
+.toc-container ul {
+  list-style-type: disc; /* show bullets */
+  padding-left: 1.5rem;  /* indent bullets */
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
+.toc-container h5 {
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .custom-offcanvas {
+    width: 180px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-offcanvas {
+    width: 140px !important;
+  }
+}
+.indent {
+  margin-left: 50px;
+}
 .main-content-transition {
   transition: margin-right 0.3s ease;
 }

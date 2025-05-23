@@ -5,36 +5,44 @@ import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
+import ImageBlock from '../components/ImageBlock';
+import ModuleIntro from '../components/ModuleIntro';
+
+import randomvsys from './RandomVsSystematic.png';
+
+const overview = (
+  <div className="overview-text">
+    <p>
+      Understanding uncertainty in data collection helps us account for <strong>errors</strong> and <strong>improve decision-making</strong>. Recognizing errors and uncertainties in data collection helps us ensure more reliable and accurate data, which leads to better decision-making. This module covers:
+    </p>
+  </div>
+);
+
+const toc = (
+  <div className="toc-container">
+    <h5>Table of Contents</h5>
+    <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
+      <li><a href="#noise">Noise</a></li>
+      <li><a href="#inaccuracy">Inaccuracy</a></li>
+      <li><a href="#accuracy-vs-precision">Accuracy vs. Precision</a></li>
+      <li><a href="#comparing-noise-inaccuracy">Comparing Noise and Inaccuracy</a></li>
+      <li><a href="#why-this-matters">Why This Matters</a></li>
+    </ul>
+  </div>
+);
 
 export function ModuleFive() {
-    return (
-        <ModulePage
-            title="Uncertainty"
-            url="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-        >
-            <ParaBlock
-                items={[
-                    <span key="intro">Understanding uncertainty in data collection helps us account for <strong>errors</strong> and <strong>improve decision-making</strong>. This module covers:</span>,
-                ]}
-            />
-
-            <ListBlock
-                title="Table of Contents"
-                items={[
-                    <a href="#summary" key="summary">Summary</a>,
-                    <a href="#noise" key="noise">Noise</a>,
-                    <a href="#inaccuracy" key="inaccuracy">Inaccuracy</a>,
-                    <a href="#accuracy-vs-precision" key="accuracy-vs-precision">Accuracy vs. Precision</a>,
-                    <a href="#comparing-noise-inaccuracy" key="comparing-noise-inaccuracy">Comparing Noise and Inaccuracy</a>,
-                    <a href="#why-this-matters" key="why-this-matters">Why This Matters</a>
-                ]}
-            />
-
-            <ParaBlock
-                items={[
-                    <span key="data-summary">Recognizing errors and uncertainties in data collection helps us ensure more reliable and accurate data, which leads to better decision-making.</span>,
-                ]}
-            />
+  return (
+    <ModulePage
+      title="Uncertainty"
+      url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    >
+      <ModuleIntro
+        title="Uncertainty"
+        readTime="4 min read"
+        overview={overview}
+        toc={toc}
+      />
 
             <div id="summary">
                 <ParaBlock title="Summary" items={[]} />
@@ -119,6 +127,7 @@ export function ModuleFive() {
                     title="Accuracy vs. Precision"
                     description="Accuracy is how close a measurement is to the true value, while precision refers to the consistency of repeated measurements."
                 />
+                <ImageBlock src={randomvsys} />
                 <ListBlock
                     items={[
                         <span>High Precision, Low Accuracy: Results are consistent, but wrong.</span>,
@@ -140,7 +149,7 @@ export function ModuleFive() {
             </div>
 
             <div id="why-this-matters">
-                <ParaBlock title="Why This Matters" items={[]} />
+                <ParaBlock title="Why It Matters" level={1} items={[]} />
                 <ListBlock
                     items={[
                         "Unaddressed uncertainty can result in:",

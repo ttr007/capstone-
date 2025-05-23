@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
+import ModuleBar from './ModuleBar';
+import Footer from './Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './card.css';
 import Mod1Image from '../images/Mod1.png';
 import Mod2Image from '../images/Mod2.png';
@@ -11,153 +14,136 @@ import Mod6Image from '../images/Mod6.png';
 import Mod7Image from '../images/Mod7.png';
 import Mod8Image from '../images/Mod8.png';
 
+const modules = [
+  {
+    title: 'Sampling',
+    image: Mod1Image,
+    link: '/sampling',
+    items: [
+      'Understanding how the size of a data set determines what it means',
+      "Sampling methods (probability and non-probability): Choose who’s in your study",
+      "Sample size: Influences how well your results reflect the whole population",
+      "Method and size of sample influence trustworthy and importance of results are",
+    ]
+    ,
+  },
+  {
+    title: 'Change Over Time',
+    image: Mod2Image,
+    link: '/change-over-time',
+    items: [
+      'Understanding the easiest ways to track progress and show results',
+      'Percentage change: How a number has increased or decreased over time',
+      'Percentage point difference: difference between percentages to show change',
+      'Points ≠ Change: 50% → 75% is a 50% increase (NOT 25% increase, but 25 percentage points increase)'
+    ],
+  },
+  {
+    title: 'Relationships',
+    image: Mod3Image,
+    link: '/relationships',
+    items: [
+      "Understanding how two things can be connected and how to show it",
+      "Association: Two variables change together—it shows a relationship",
+      "Causality: One variable causes another to change",
+      "Association ≠ Causation: Events at the same time don't mean one caused the other",
+    ],
+  },
+  {
+    title: 'Patterns & Variation',
+    image: Mod4Image,
+    link: '/patterns-and-variability',
+    items: [
+      "Understanding what different shapes of data can tell you",
+      "Learn how to spot patterns in your data",
+      "Distribution: Shape of your data and how values are spread out",
+      "Variance & Standard Deviation: How much the data values are different to each other",
+      "Choose the best average to represent your data.",
+    ],
+  },
+  {
+    title: 'Uncertainty',
+    image: Mod5Image,
+    link: '/uncertainty',
+    items: [
+      "Understanding what can make data tricky helps you trust your results more",
+      "Noise: Random changes that make data confusing",
+      "Inaccuracy: Repeated mistakes in collecting data",
+      "Both can change what your data shows",
+      "Fixing these problems makes your results clearer and more reliable"
+    ]
+  },
+  {
+    title: 'Statistical Signif.',
+    image: Mod6Image,
+    link: '/statistical-significance',
+    items: [
+      "Understanding if something really worked or just happened by luck",
+      "Statistical significance: Showing if a result is unlikely to be due to chance",
+      "P-value: How likely it is if the result happened randomly",
+      "Low p-value (<0.05): Suggests a real effect, not just coincidence",
+      "High p-value (>0.05): Suggests an effect is by chance or coincidence"
+    ],
+  },
+  {
+    title: 'Social Implications',
+    image: Mod7Image,
+    link: '/social-implications',
+    items: [
+      "Understanding how data choices affect real people and communities",
+      "Representation: Making sure data includes all groups fairly",
+      "Bias: When data leads to unfair or inaccurate results",
+      "Fair sampling and bias checks help create better, more ethical data"
+    ],
+  },
+  {
+    title: 'Skewing The Data',
+    image: Mod8Image,
+    link: '/skewing-the-data',
+    items: [
+      "Understanding how incomplete or unusual data affect your results",
+      "Missing data: When information is incomplete, causing bias or weak conclusions",
+      "Outliers: Data points that don’t fit the trend and can skew results",
+      "The context of these values and how you handle them greatly changes your data",
+    ],
+  },
+];
+
 const Home = () => {
-    return (
-        <div>
-            <Header />
-            <div>
-              <h1 class="modules-title">Modules</h1>
-              <div class="row">
+  const [moduleBarExpanded, setModuleBarExpanded] = useState(true); // Open by default
 
-                <div class="column">
-                  <div class="card">
-                    <h3>Sampling</h3>
-                    <img 
-                      src={Mod1Image} 
-                      alt="Module 1 cover pic"
-                    />
-                    <li>Define Sample Size and Its Importance</li>
-                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
-                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
-                    <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/sampling" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="card">
-                    <h3>Change Over Time</h3>
-                    <img 
-                      src={Mod2Image} 
-                      alt="Module 2 cover pic"
-                    />
-                    <li>Define Sample Size and Its Importance</li>
-                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
-                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
-                    <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/change-over-time" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="card">
-                    <h3>Relationships</h3>
-                    <img 
-                      src={Mod3Image} 
-                      alt="Module 3 cover pic"
-                    />
-                    <li>Define Sample Size and Its Importance</li>
-                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
-                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
-                    <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/relationships" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="card">
-                    <h3>Patterns And Variability</h3>
-                    <img 
-                      src={Mod4Image} 
-                      alt="Module 4 cover pic"
-                    />
-                    <li>Define Sample Size and Its Importance</li>
-                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
-                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
-                    <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/patterns-and-variability" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="card">
-                    <h3>Uncertainty</h3>
-                    <img 
-                      src={Mod5Image} 
-                      alt="Module 5 cover pic"
-                    />
-                    <li>Define Sample Size and Its Importance</li>
-                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
-                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
-                    <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/uncertainty" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="card">
-                    <h3>Statistical Significance</h3>
-                    <img 
-                      src={Mod6Image} 
-                      alt="Module 6 cover pic"
-                    />
-                    <li>Define Sample Size and Its Importance</li>
-                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
-                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
-                    <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/statistical-signifiance" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="card">
-                    <h3>Societal Implications</h3>
-                    <img 
-                      src={Mod7Image} 
-                      alt="Module 7 cover pic"
-                    />
-                    <li>Define Sample Size and Its Importance</li>
-                    <li>Determine Appropriate Sample Sizes for Various Analyses</li>
-                    <li>Understand relationship Between Sample Size & Statistical Significance</li>
-                    <li>Assess the Impact of Sample Size on Data Representation</li>
-                    <Link to="/social-implications" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="card">
-                    <h3>Skewing The Data</h3>
-                    <img 
-                      src={Mod8Image} 
-                      alt="Module 8 cover pic"
-                    />
-                    <li>Define Missing Data Types (MCAR, MAR, MNAR)</li>
-                    <li>Address Missing Data Impact on accuracy and bias</li>
-                    <li>Identify Outliers using visual/statistical methods</li>
-                    <li>Manage Outliers to balance accuracy and insights</li>
-                    <Link to="/skewing-the-data" className="button-style">
-                      <button>Begin Learning</button>
-                    </Link>
-                  </div>
-                </div>
+  return (
+    <div style={{ position: 'relative', overflowX: 'hidden', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Header />
+      <ModuleBar
+        onExpand={() => setModuleBarExpanded(true)}
+        onCollapse={() => setModuleBarExpanded(false)}
+        expanded={moduleBarExpanded}
+      />
+      <main className="container flex-grow-1" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
+        <h1 className="modules-title text-center my-4">Modules</h1>
+        <div className="row">
+          {modules.map((mod, index) => (
+            <div className="col-md-3 mb-4 column d-flex" key={index}>
+              <div className="card h-100 d-flex flex-column">
+                <h3>{mod.title}</h3>
+                <img src={mod.image} alt={`${mod.title} cover pic`} />
+                <ul>
+                  {mod.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+                <Link to={mod.link} className="button-style mt-auto">
+                  <button>Begin Learning</button>
+                </Link>
               </div>
             </div>
+          ))}
         </div>
-    );
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default Home;
