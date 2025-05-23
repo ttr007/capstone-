@@ -5,6 +5,14 @@ import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import FormulaBlock from '../components/FormulaBlock';
 import TableBlock from '../components/TableBlock';
+import ImageBlock from '../components/ImageBlock';
+import AdditionalSourcesBlock from '../components/AdditionalBlock';
+
+import skewleft from './image (1).png';
+import uniform from './image (2).png';
+import skewright from './image (3).png';
+import unimodal from './image (4).png';
+import stdf from './notion3.png';
 
 export function ModuleFour() {
     return (
@@ -22,7 +30,7 @@ export function ModuleFour() {
                 title="Table of Contents"
                 items={[
                     <a href="#distribution" key="distribution">Distribution</a>,
-                    <a href="#variance" key="variance">Variation</a>,
+                    <a href="#variance" key="variance">Variance</a>,
                     <a href="#standard-deviation" key="standard-deviation">Standard Deviation</a>,
                     <a href="#averages-vs-means" key="averages-vs-means">Averages vs. Means</a>,
                     <a href="#why-it-matters" key="why-it-matters">Why It Matters</a>,
@@ -53,7 +61,14 @@ export function ModuleFour() {
                         ['Uniform', 'All values are equally likely', 'Rolling a die'],
                     ]}
                 />
-
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
+                    <ImageBlock src={skewleft} style={{ width: '50%' }} />
+                    <ImageBlock src={skewright} style={{ width: '50%' }} />
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
+                    <ImageBlock src={uniform} style={{ width: '50%' }} />
+                    <ImageBlock src={unimodal} style={{ width: '50%' }} />
+                </div>
                 <ParaBlock
                     items={[
                         <span key="distribution-explanation">Understanding <strong>distribution</strong> can help assess equity, access, and consistency. For example:</span>,
@@ -150,6 +165,26 @@ export function ModuleFour() {
             <ParaBlock
                 items={[
                     "These tools are the foundation of statistical thinking and help you recognize patterns, spot bias, and ask better questions.",
+                ]}
+            />
+            <AdditionalSourcesBlock
+                sources={[
+                    {
+                        label: "K2 Analytics: Standard Deviation and Variance",
+                        url: "https://www.k2analytics.co.in/measures-of-dispersion-standard-deviation/",
+                    },
+                    {
+                        label: "Data Science Dojo: Types of Statistical Distributions",
+                        url: "https://datasciencedojo.com/blog/types-of-statistical-distributions-in-ml/",
+                    },
+                    {
+                        label: "Airbyte: Data Distribution Types",
+                        url: "https://airbyte.com/data-engineering-resources/data-distribution-types",
+                    },
+                    {
+                        label: "SERJ: Reasoning with Variability",
+                        url: "https://iase-pub.org/ojs/SERJ/article/view/547",
+                    },
                 ]}
             />
         </ModulePage>

@@ -5,6 +5,8 @@ import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
 import FormulaBlock from '../components/FormulaBlock';
+import AdditionalSourcesBlock from '../components/AdditionalBlock';
+
 
 export function ModuleEight() {
     return (
@@ -148,9 +150,9 @@ export function ModuleEight() {
                 </FormulaBlock>
                 <ListBlock
                     items={[<span key="2">Interquartile Range (IQR) <strong>finds</strong> values that are far from the middle of the dataset.</span>
-                ]}
+                    ]}
                 />
-            <FormulaBlock
+                <FormulaBlock
                 >
                     <span key="sd-formula">Outliers = values &lt; Q1 - 1.5 * IQR OR values &gt;  Q3 + 1.5 * IQR </span>
                 </FormulaBlock>
@@ -184,7 +186,26 @@ export function ModuleEight() {
                     ]}
                 />
             </div>
-
+            <AdditionalSourcesBlock
+                sources={[
+                    {
+                        label: "PubMed Central: The Prevention and Handling of Missing Data",
+                        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3668100/",
+                    },
+                    {
+                        label: "Scribbr: Dealing with Outliers and Missing Data",
+                        url: "https://www.scribbr.com/statistics/outliers/#:~:text=Outliers%20are%20extreme%20values%20that,results%20of%20any%20hypothesis%20tests",
+                    },
+                    {
+                        label: "NeenOpal: Outliers and Missing Values",
+                        url: "https://www.neenopal.com/dealing-with-outliers-and-missing-values-in-a-dataset.html",
+                    },
+                    {
+                        label: "MDPI: Handling Skewed Data",
+                        url: "https://www.mdpi.com/2076-3417/10/18/6247",
+                    },
+                ]}
+            />
         </ModulePage>
     );
 }

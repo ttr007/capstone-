@@ -4,12 +4,13 @@ import ListBlock from '../components/ListBlock';
 import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
+import AdditionalSourcesBlock from '../components/AdditionalBlock';
 
 export function ModuleFive() {
     return (
         <ModulePage
             title="Uncertainty"
-            url="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with actual video if needed
+            url="https://www.youtube.com/embed/dQw4w9WgXcQ" 
         >
             <ParaBlock
                 items={[
@@ -62,9 +63,10 @@ export function ModuleFive() {
                         ['Sampling Variation', 'Natural randomness from collecting only part of a population—even if done correctly']
                     ]}
                 />
-                <ParaBlock
+                <CalloutBlock
                     title="Example"
-                    items={[
+                    type="example"
+                    description={[
                         <span key="noise-example">Inaccurately filled client intake forms in Pierce County may create noise and reduce the ability to analyze service needs accurately.</span>
                     ]}
                 />
@@ -85,9 +87,10 @@ export function ModuleFive() {
                     title="Inaccuracy"
                     description="Systematic, repeatable errors that lead to consistently wrong data—often due to flawed tools or methods."
                 />
-                <ParaBlock
+                <CalloutBlock
                     title="Example"
-                    items={[
+                    type="example"
+                    description={[
                         <span key="inaccuracy-example">An inaccurate clock (always 10 minutes ahead) gives you the wrong time every time. Similarly, Pierce County’s GPS or GIS tagging technologies may report inaccurate construction progress.</span>
                     ]}
                 />
@@ -152,6 +155,22 @@ export function ModuleFive() {
                     ]}
                 />
             </div>
+            <AdditionalSourcesBlock
+                sources={[
+                    {
+                        label: "NPL: Difference Between Accuracy and Uncertainty",
+                        url: "https://www.npl.co.uk/resources/q-a/difference-accuracy-uncertainty",
+                    },
+                    {
+                        label: "NSWTF: Uncertainty, Error, and Confidence in Data",
+                        url: "https://cpl.nswtf.org.au/journal/semester-1-2020/uncertainty-error-and-confidence-in-data/",
+                    },
+                    {
+                        label: "ONS UK: How Government Agencies May Deal With Uncertainty",
+                        url: "https://www.ons.gov.uk/methodology/methodologytopicsandstatisticalconcepts/uncertaintyandhowwemeasureit#:~:text=Uncertainty%20relates%20to%20how%20the,confidence%20interval",
+                    },
+                ]}
+            />
         </ModulePage>
     );
 }

@@ -7,7 +7,6 @@ const ModuleBar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // Auto-open offcanvas on first navigation
   useEffect(() => {
     const offcanvasEl = document.getElementById('offcanvas');
     const mainContent = document.getElementById('main-content');
@@ -33,14 +32,15 @@ const ModuleBar = () => {
     };
   }, []);
   const modules = [
-    { title: 'Sampling', icon: 'bi-house', time: '6 min read', link: '/sampling' },
+    { title: 'Sampling', icon: 'bi-circle-half', time: '6 min read', link: '/sampling' },
     { title: 'Change Over Time', icon: 'bi-alarm', time: '5 min read', link: '/change-over-time' },
     { title: 'Relationships', icon: 'bi-table', time: '7 min read', link: '/relationships' },
     { title: 'Patterns and Variability', icon: 'bi-bar-chart', time: '5 min read', link: '/patterns-and-variability' },
     { title: 'Uncertainty', icon: 'bi-question-circle', time: '4 min read', link: '/uncertainty' },
-    { title: 'Societal Implications', icon: 'bi-people', time: '6 min read', link: '/' },
-    { title: 'Skewing the Data', icon: 'bi-graph-up-arrow', time: '4 min read', link: '/' },
-    { title: 'Statistical Significance', icon: 'bi-clipboard-data', time: '5 min read', link: '/' },
+    { title: 'Statistical Significance', icon: 'bi-clipboard-data', time: '5 min read', link: '/statistical-significance' },
+    { title: 'Social Implications', icon: 'bi-people', time: '6 min read', link: '/social-implications' },
+
+    { title: 'Skewing the Data', icon: 'bi-graph-up-arrow', time: '4 min read', link: '/skewing-the-data' }
   ];
 
   return (

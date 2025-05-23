@@ -4,6 +4,8 @@ import ListBlock from '../components/ListBlock';
 import ParaBlock from '../components/ParaBlock';
 import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
+import AdditionalSourcesBlock from '../components/AdditionalBlock';
+
 export function ModuleSeven() {
 
     return (
@@ -13,10 +15,13 @@ export function ModuleSeven() {
 
             <div>
                 <ParaBlock
-                    items={[<span key="1">Data comes from real people—so how we collect and interpret it affects real lives.</span>]}
+                    items={[<span key="1">Data comes from real people—so how we collect and interpret it affects real lives.
+                        This module focuses on the ethical and social responsibilities involved in data work, especially around representation and reinforcing bias.</span>
+                    ]}
                 />
 
                 <ListBlock
+                    title="Table of Contents"
                     items={[
                         <a href="#representation" key="1">Representation</a>,
                         <a href="#reinforcing-bias" key="2">Reinforcing Bias</a>,
@@ -28,17 +33,11 @@ export function ModuleSeven() {
             <div id="representation">
                 <ParaBlock
                     title="Representation"
-                    items={[<span key="1">This module focuses on the ethical and social responsibilities involved in data work, especially around representation and reinforcing bias.</span>]}
                 />
-
                 <CalloutBlock
                     type="info"
                     title="Representation"
-                    description={[<span key="1">Representation ensures your sample reflects the full diversity of the population.</span>]}
-                />
-
-                <ParaBlock
-                    items={[<span key="1">When data doesn’t represent people fairly, it can lead to harmful outcomes such as discrimination, exclusion, or misleading policies.</span>]}
+                    description={[<span key="1">Representation ensures your sample reflects the full diversity of the population. When data doesn’t represent people fairly, it can lead to harmful outcomes such as discrimination, exclusion, or misleading policies.</span>]}
                 />
             </div>
 
@@ -65,19 +64,14 @@ export function ModuleSeven() {
             </div>
 
             <div>
-                <ListBlock
+                <CalloutBlock
+                    type="example"
                     title="Example: U.S. Finance Sector"
-                    items={[<span>People of color make up <strong>40%</strong> of entry-level jobs</span>,
-                    <span>But only <strong>10%</strong> of senior leadership positions</span>
-                    ]}
-                />
+                    description={[<span>People of color make up <strong>40%</strong> of entry-level jobs</span>,
+                    <span>But only <strong>10%</strong> of senior leadership positions. </span>,
+                    <span>This underrepresentation affects hiring, leadership decisions, and equity. </span>,
+                    <a href="https://www.mckinsey.com/industries/financial-services/our-insights/racial-equity-in-financial-services">[McKinsey: Racial Equity in Financial Services]</a>
 
-                <ParaBlock
-                    items={[<span key="1"><strong>This underrepresentation affects hiring, leadership decisions, and equity.</strong></span>]}
-                />
-                <ParaBlock
-                    items={[
-                        <a href="https://www.mckinsey.com/industries/financial-services/our-insights/racial-equity-in-financial-services">[McKinsey: Racial Equity in Financial Services]</a>
                     ]}
                 />
 
@@ -86,7 +80,6 @@ export function ModuleSeven() {
             <div>
                 <ParaBlock
                     title="How to Improve Representation"
-                    items={[<span key="1">There are several methods for improving representation in data collection.</span>]}
                 />
 
                 <TableBlock
@@ -98,8 +91,10 @@ export function ModuleSeven() {
                     ]}
                 />
 
-                <ParaBlock
-                    items={[<span key="1">Fair sampling = fairer insights → better decisions.</span>]}
+                <CalloutBlock 
+                    title="Sampling"
+                    type="success"
+                    description={[<span key="1">Fair sampling = fairer insights → better decisions.</span>]}
                 />
             </div>
 
@@ -147,6 +142,22 @@ export function ModuleSeven() {
                     description={[<span key="1">"If your data doesn’t include me, your decisions might not help me—and might even hurt me."</span>]}
                 />
             </div>
+            <AdditionalSourcesBlock
+                sources={[
+                    {
+                        label: "University of Manchester: What is Social Statistics?",
+                        url: "https://www.humanities.manchester.ac.uk/social-statistics/study/what-is-social-statistics/",
+                    },
+                    {
+                        label: "Data.org: Data Science for Social Impact",
+                        url: "https://data.org/news/why-how-and-what-of-data-science-for-social-impact/",
+                    },
+                    {
+                        label: "UC San Diego: IPE Data Science Research",
+                        url: "https://ipe.ucsd.edu/research/data-science.html",
+                    },
+                ]}
+            />
 
         </ModulePage>
     );

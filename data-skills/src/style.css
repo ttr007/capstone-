@@ -1,17 +1,24 @@
+
 .module-container {
-  padding-top: 150px;
+  max-width: 67ch;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); 
+  line-height: 1.6;
+  padding-top: 100.67px;
 }
+
 
 .main-content-transition {
   transition: margin-right 0.3s ease;
 }
 
-.main-content-shifted {
-  margin-right: 260px;
-}
+/* .main-content-shifted {
+  margin-right: 50px;
+} */
 
 [id] {
-  scroll-margin-top: 190px;
+  scroll-margin-top: 100.67px;
 }
 
 a[href^="#"] {
@@ -45,6 +52,15 @@ h2 {
   font-size: 35px;
   font-style: normal;
   font-weight: 600;
+  line-height: normal;
+}
+
+h3 {
+  color: #000;
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
   line-height: normal;
 }
 
