@@ -1,12 +1,11 @@
-import React from 'react';
-
 export default function Footer() {
   return (
     <footer className="text-center text-muted py-4 mt-5 border-top small">
-      <div>© {new Date().getFullYear()} Data Made Easy</div>
+      <div>© {new Date().getFullYear()} Think Tank</div>
       <div className="mt-2">
-        <a href="/contact" className="text-muted text-decoration-none me-3">Contact</a>
-        <a href="/privacy" className="text-muted text-decoration-none">Privacy</a>
+        <a href="https://ischool.uw.edu/capstone" className="text-muted text-decoration-none me-3" target="_blank" rel="noopener noreferrer">
+          More Information
+        </a>
       </div>
     </footer>
   );
