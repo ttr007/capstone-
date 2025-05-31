@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Offcanvas } from 'bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -34,14 +34,14 @@ const ModuleBar = () => {
   }, []);
 
   const modules = [
-    { title: 'Sampling', icon: 'bi-circle-half', time: '6 min read', link: '/sampling' },
-    { title: 'Change Over Time', icon: 'bi-alarm', time: '5 min read', link: '/change-over-time' },
-    { title: 'Relationships', icon: 'bi-table', time: '7 min read', link: '/relationships' },
-    { title: 'Patterns and Variability', icon: 'bi-bar-chart', time: '7 min read', link: '/patterns-and-variability' },
-    { title: 'Uncertainty', icon: 'bi-question-circle', time: '4 min read', link: '/uncertainty' },
-    { title: 'Statistical Significance', icon: 'bi-clipboard-data', time: '5 min read', link: '/statistical-significance' },
-    { title: 'Social Implications', icon: 'bi-people', time: '6 min read', link: '/social-implications' },
-    { title: 'Skewing the Data', icon: 'bi-graph-up-arrow', time: '7 min read', link: '/skewing-the-data' }
+    { title: 'Sampling', icon: 'bi-circle-half', time: '6 min read', link: 'sampling' },
+    { title: 'Change Over Time', icon: 'bi-alarm', time: '5 min read', link: 'change-over-time' },
+    { title: 'Relationships', icon: 'bi-table', time: '7 min read', link: 'relationships' },
+    { title: 'Patterns and Variability', icon: 'bi-bar-chart', time: '7 min read', link: 'patterns-and-variability' },
+    { title: 'Uncertainty', icon: 'bi-question-circle', time: '4 min read', link: 'uncertainty' },
+    { title: 'Statistical Significance', icon: 'bi-clipboard-data', time: '5 min read', link: 'statistical-significance' },
+    { title: 'Social Implications', icon: 'bi-people', time: '6 min read', link: 'social-implications' },
+    { title: 'Skewing the Data', icon: 'bi-graph-up-arrow', time: '7 min read', link: 'skewing-the-data' }
   ];
 
   return (
@@ -85,7 +85,8 @@ const ModuleBar = () => {
       >
         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
           {modules.map((mod, i) => {
-            const isActive = currentPath === mod.link;
+            const fullLink = `/capstone-${mod.link}`;
+            const isActive = currentPath === fullLink;
             return (
               <li
                 className="nav-item"
@@ -96,8 +97,8 @@ const ModuleBar = () => {
                   backgroundColor: isActive ? '#c0c0c0' : 'transparent',
                 }}
               >
-                <a
-                  href={mod.link}
+                <Link
+                  to={fullLink}
                   className="nav-link text-black d-flex align-items-center"
                   style={{ height: '100%' }}
                 >
@@ -135,7 +136,7 @@ const ModuleBar = () => {
                       {mod.time}
                     </small>
                   </div>
-                </a>
+                </Link>
               </li>
             );
           })}
