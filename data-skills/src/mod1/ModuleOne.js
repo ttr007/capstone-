@@ -10,7 +10,7 @@ import ModuleIntro from '../components/ModuleIntro';
 
 const popvssamp = '/mod1/PopulationVsSample.png';
 const types = '/mod1/TypesSampling.png';
-const sum = '/mod1/M1 Sampling (T).pdf';
+const sum = encodeURI('/mod1/M1 Sampling (T).pdf');
 
 const overview = (
   <ParaBlock
