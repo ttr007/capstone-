@@ -1,4 +1,4 @@
-# Data Analytics Learning Resource for Pierce Government Workers
+# Data Skills Learning Resource
 
 ## Overview
 This project is a learning resource designed to help older, non-technical government workers gain foundational knowledge in data analytics. The resource uses simple language, real-world government examples, and interactive lessons to make learning accessible and engaging.
@@ -10,7 +10,7 @@ This project is a learning resource designed to help older, non-technical govern
 - No prior technical knowledge required
 
 ## How to Access
-The learning resource is available at: [Insert Link Here]
+The learning resource is available at: [[https://ttr007.github.io/capstone-/]]
 
 ## Usage Instructions
 1. Start at home page and choose any of the modules too begin with.
