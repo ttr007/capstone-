@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/data-skills/static/css/main.07903c96.css",
-    "main.js": "/data-skills/static/js/main.0fe87f18.js",
-    "static/media/Mod7.png": "/data-skills/static/media/Mod7.1db2c1976b7345ad1bba.png",
-    "static/media/Mod4.png": "/data-skills/static/media/Mod4.d32fd766ed3f5c825457.png",
-    "static/media/Mod5.png": "/data-skills/static/media/Mod5.06e07a0cbc37c676d746.png",
-    "static/media/Mod3.png": "/data-skills/static/media/Mod3.65ce0e5d2753edc8e622.png",
-    "static/media/Mod6.png": "/data-skills/static/media/Mod6.8f9c5036345966904711.png",
-    "static/media/Mod1.png": "/data-skills/static/media/Mod1.372fa9f39b77fe8fc5e2.png",
-    "static/media/logo.png": "/data-skills/static/media/logo.0a3e21b2c00205b8f1f7.png",
-    "static/media/Mod2.png": "/data-skills/static/media/Mod2.107e077a454534a41333.png",
-    "static/media/Mod8.png": "/data-skills/static/media/Mod8.cf17434b1c9236e494db.png",
-    "index.html": "/data-skills/index.html",
-    "main.07903c96.css.map": "/data-skills/static/css/main.07903c96.css.map",
-    "main.0fe87f18.js.map": "/data-skills/static/js/main.0fe87f18.js.map"
+    "main.css": "/capstone-/static/css/main.07903c96.css",
+    "main.js": "/capstone-/static/js/main.583380d5.js",
+    "static/media/Mod7.png": "/capstone-/static/media/Mod7.1db2c1976b7345ad1bba.png",
+    "static/media/Mod4.png": "/capstone-/static/media/Mod4.d32fd766ed3f5c825457.png",
+    "static/media/Mod5.png": "/capstone-/static/media/Mod5.06e07a0cbc37c676d746.png",
+    "static/media/Mod3.png": "/capstone-/static/media/Mod3.65ce0e5d2753edc8e622.png",
+    "static/media/Mod6.png": "/capstone-/static/media/Mod6.8f9c5036345966904711.png",
+    "static/media/Mod1.png": "/capstone-/static/media/Mod1.372fa9f39b77fe8fc5e2.png",
+    "static/media/logo.png": "/capstone-/static/media/logo.0a3e21b2c00205b8f1f7.png",
+    "static/media/Mod2.png": "/capstone-/static/media/Mod2.107e077a454534a41333.png",
+    "static/media/Mod8.png": "/capstone-/static/media/Mod8.cf17434b1c9236e494db.png",
+    "index.html": "/capstone-/index.html",
+    "main.07903c96.css.map": "/capstone-/static/css/main.07903c96.css.map",
+    "main.583380d5.js.map": "/capstone-/static/js/main.583380d5.js.map"
   },
   "entrypoints": [
     "static/css/main.07903c96.css",
-    "static/js/main.0fe87f18.js"
+    "static/js/main.583380d5.js"
   ]
 }
