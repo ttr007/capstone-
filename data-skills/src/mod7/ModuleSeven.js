@@ -110,6 +110,9 @@ const quizData = [
   }
 ];
 
+const sum = encodeURI('/mod7/M7 Social Implications (T).pdf');
+
+
 export function ModuleSeven() {
     return (
         <ModulePage
@@ -121,6 +124,8 @@ export function ModuleSeven() {
                 readTime="6 min read"
                 overview={overview}
                 toc={toc}
+                pdfUrl={sum}
+                downloadFileName="SocialImplications.pdf"
             />
             <ParaBlock title="Summary" level={1} />
             <div id="summary">

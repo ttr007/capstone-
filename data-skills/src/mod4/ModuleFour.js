@@ -40,84 +40,84 @@ const toc = (
 );
 
 const quizData = [
-  {
-    id: 1,
-    question: "What does the shape of a data distribution tell you?",
-    options: [
-      "The cause of the data values",
-      "The average of the values",
-      "How values are spread out or clustered",
-      "Whether the data is biased"
-    ],
-    correctAnswer: "How values are spread out or clustered",
-    explanation: {
-      correct: "The distribution's shape reveals patterns—whether values are tightly packed, spread out, or skewed.",
-      incorrect: "Distribution doesn't explain causes, averages, or bias—it shows how data values are arranged and spread."
+    {
+        id: 1,
+        question: "What does the shape of a data distribution tell you?",
+        options: [
+            "The cause of the data values",
+            "The average of the values",
+            "How values are spread out or clustered",
+            "Whether the data is biased"
+        ],
+        correctAnswer: "How values are spread out or clustered",
+        explanation: {
+            correct: "The distribution's shape reveals patterns—whether values are tightly packed, spread out, or skewed.",
+            incorrect: "Distribution doesn't explain causes, averages, or bias—it shows how data values are arranged and spread."
+        }
+    },
+    {
+        id: 2,
+        question: "What is a characteristic of a right-skewed distribution?",
+        options: [
+            "Most values are high, with a few very low outliers",
+            "Most values are low, with a few high outliers",
+            "Values are spread evenly across the range",
+            "The distribution has two peaks"
+        ],
+        correctAnswer: "Most values are low, with a few high outliers",
+        explanation: {
+            correct: "Right-skewed distributions have a long tail on the right—most values are lower, but a few large ones stretch the distribution.",
+            incorrect: "A left-skewed distribution has low outliers, a uniform distribution spreads values evenly, and two peaks suggest a bimodal shape."
+        }
+    },
+    {
+        id: 3,
+        question: "What does high variance indicate in a dataset?",
+        options: [
+            "The values are very similar",
+            "There is a consistent pattern",
+            "Values differ widely from each other",
+            "The data is not skewed"
+        ],
+        correctAnswer: "Values differ widely from each other",
+        explanation: {
+            correct: "High variance means the data points are spread out and less consistent.",
+            incorrect: "Low variance indicates similarity; consistent patterns aren’t implied by variance; and skewness is unrelated to variance."
+        }
+    },
+    {
+        id: 4,
+        question: "When is it better to use the median instead of the mean?",
+        options: [
+            "When the data is normally distributed",
+            "When the data contains outliers",
+            "When all values are the same",
+            "When calculating variance"
+        ],
+        correctAnswer: "When the data contains outliers",
+        explanation: {
+            correct: "The median isn’t pulled by extreme values, so it gives a better central value when outliers are present.",
+            incorrect: "The mean works fine for normal distributions or identical values, and variance specifically requires the mean."
+        }
+    },
+    {
+        id: 5,
+        question: "What does standard deviation measure?",
+        options: [
+            "The number of modes in the dataset",
+            "The average distance of values from the mean",
+            "The middle value in the dataset",
+            "The shape of the distribution"
+        ],
+        correctAnswer: "The average distance of values from the mean",
+        explanation: {
+            correct: "Standard deviation tells you how much the data typically varies from the mean—it's a measure of spread.",
+            incorrect: "It doesn't count modes, identify the median, or describe the shape of the distribution—just the spread."
+        }
     }
-  },
-  {
-    id: 2,
-    question: "What is a characteristic of a right-skewed distribution?",
-    options: [
-      "Most values are high, with a few very low outliers",
-      "Most values are low, with a few high outliers",
-      "Values are spread evenly across the range",
-      "The distribution has two peaks"
-    ],
-    correctAnswer: "Most values are low, with a few high outliers",
-    explanation: {
-      correct: "Right-skewed distributions have a long tail on the right—most values are lower, but a few large ones stretch the distribution.",
-      incorrect: "A left-skewed distribution has low outliers, a uniform distribution spreads values evenly, and two peaks suggest a bimodal shape."
-    }
-  },
-  {
-    id: 3,
-    question: "What does high variance indicate in a dataset?",
-    options: [
-      "The values are very similar",
-      "There is a consistent pattern",
-      "Values differ widely from each other",
-      "The data is not skewed"
-    ],
-    correctAnswer: "Values differ widely from each other",
-    explanation: {
-      correct: "High variance means the data points are spread out and less consistent.",
-      incorrect: "Low variance indicates similarity; consistent patterns aren’t implied by variance; and skewness is unrelated to variance."
-    }
-  },
-  {
-    id: 4,
-    question: "When is it better to use the median instead of the mean?",
-    options: [
-      "When the data is normally distributed",
-      "When the data contains outliers",
-      "When all values are the same",
-      "When calculating variance"
-    ],
-    correctAnswer: "When the data contains outliers",
-    explanation: {
-      correct: "The median isn’t pulled by extreme values, so it gives a better central value when outliers are present.",
-      incorrect: "The mean works fine for normal distributions or identical values, and variance specifically requires the mean."
-    }
-  },
-  {
-    id: 5,
-    question: "What does standard deviation measure?",
-    options: [
-      "The number of modes in the dataset",
-      "The average distance of values from the mean",
-      "The middle value in the dataset",
-      "The shape of the distribution"
-    ],
-    correctAnswer: "The average distance of values from the mean",
-    explanation: {
-      correct: "Standard deviation tells you how much the data typically varies from the mean—it's a measure of spread.",
-      incorrect: "It doesn't count modes, identify the median, or describe the shape of the distribution—just the spread."
-    }
-  }
 ];
 
-
+const sum = encodeURI('/mod4/M4 Patterns and Variability (T).pdf');
 
 export function ModuleFour() {
     return (
@@ -130,6 +130,8 @@ export function ModuleFour() {
                 readTime="7 min read"
                 overview={overview}
                 toc={toc}
+                pdfUrl={sum}
+                downloadFileName="PatternsAndVariability.pdf"
             />
 
             <ListBlock

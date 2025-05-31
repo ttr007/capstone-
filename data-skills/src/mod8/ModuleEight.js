@@ -166,6 +166,8 @@ const quizData = [
   }
 ];
 
+const sum = encodeURI('/mod8/M8 Skewing the Data (T).pdf');
+
 
 export function ModuleEight() {
     return (
@@ -178,6 +180,8 @@ export function ModuleEight() {
                 readTime="7 min read"
                 overview={overview}
                 toc={toc}
+                pdfUrl={sum}
+                downloadFileName="Skewing.pdf"
             />
 
             <div id="summary">

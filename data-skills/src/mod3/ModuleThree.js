@@ -106,6 +106,9 @@ const quizData = [
   }
 ];
 
+const sum = encodeURI('/mod3/M3 Relationships (T).pdf)')
+
+
 
 
 export function ModuleThree() {
@@ -119,6 +122,8 @@ export function ModuleThree() {
         readTime="7 min read"
         overview={overview}
         toc={toc}
+        pdfUrl={sum}
+        downloadFileName="Relationships.pdf"
       />
       <ListBlock
         title="Summary"

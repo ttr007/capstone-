@@ -110,6 +110,7 @@ const quizData = [
   }
 ];
 
+const sum = encodeURI('/mod5/M5 Uncertainty (T).pdf');
 
 export function ModuleFive() {
     return (
@@ -122,6 +123,8 @@ export function ModuleFive() {
                 readTime="4 min read"
                 overview={overview}
                 toc={toc}
+                pdfUrl={sum}
+                downloadFileName="Uncertainty.pdf"
             />
 
             <div id="summary">

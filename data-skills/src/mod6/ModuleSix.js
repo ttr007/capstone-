@@ -111,6 +111,7 @@ const quizData = [
     },
   },
 ];
+const sum = encodeURI('/mod6/M6 Statistical Significance (T).pdf');
 
 export function ModuleSix() {
     return (
@@ -123,6 +124,8 @@ export function ModuleSix() {
                 readTime="5 min read"
                 overview={overview}
                 toc={toc}
+                pdfUrl={sum}
+                downloadFileName="StatisticalSignificance.pdf"
             />
             <div id="summary">
                 <ListBlock

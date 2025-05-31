@@ -12,6 +12,8 @@ import QuizBlock from '../components/QuizBlock';
 
 const PercentIncrease = '/mod2/PercentIncrease.png';
 const PercentDecrease = '/mod2/PercentDecrease.png';
+const sum = encodeURI('/mod2/M2 Change Over Time (T).pdf');
+
 
 const overview = (
   <div className="overview-text">
@@ -125,6 +127,8 @@ export function ModuleTwo() {
         readTime="5 min read"
         overview={overview}
         toc={toc}
+        pdfUrl={sum}
+        downloadFileName="ChangeOverTime.pdf"
       />
 
       <ListBlock
