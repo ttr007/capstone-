@@ -9,7 +9,7 @@ import ImageBlock from '../components/ImageBlock';
 import ModuleIntro from '../components/ModuleIntro';
 import QuizBlock from '../components/QuizBlock';
 
-const randomvsys = '/mod5/RandomVsSystematic.png';
+const randomvsys = '/capstone-/mod5/RandomVsSystematic.png';
 
 const overview = (
     <div className="overview-text">
@@ -110,7 +110,7 @@ const quizData = [
   }
 ];
 
-const sum = encodeURI('/mod5/M5 Uncertainty (T).pdf');
+const sum = encodeURI('/capstone-/mod5/M5 Uncertainty (T).pdf');
 
 export function ModuleFive() {
     return (

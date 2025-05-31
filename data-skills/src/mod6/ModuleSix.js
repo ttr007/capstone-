@@ -9,7 +9,7 @@ import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
 import QuizBlock from '../components/QuizBlock';
 
-const graph = '/mod6/graph.png';
+const graph = '/capstone-/mod6/graph.png';
 
 const overview = (
     <div className="overview-text">
@@ -111,7 +111,7 @@ const quizData = [
     },
   },
 ];
-const sum = encodeURI('/mod6/M6 Statistical Significance (T).pdf');
+const sum = encodeURI('/capstone-/mod6/M6 Statistical Significance (T).pdf');
 
 export function ModuleSix() {
     return (

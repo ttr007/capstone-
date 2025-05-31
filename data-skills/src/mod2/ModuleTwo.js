@@ -10,9 +10,9 @@ import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
 import QuizBlock from '../components/QuizBlock';
 
-const PercentIncrease = '/mod2/PercentIncrease.png';
-const PercentDecrease = '/mod2/PercentDecrease.png';
-const sum = encodeURI('/mod2/M2 Change Over Time (T).pdf');
+const PercentIncrease = '/capstone-/mod2/PercentIncrease.png';
+const PercentDecrease = '/capstone-/mod2/PercentDecrease.png';
+const sum = encodeURI('/capstone-/mod2/M2 Change Over Time (T).pdf');
 
 
 const overview = (

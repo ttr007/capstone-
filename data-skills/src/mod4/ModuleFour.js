@@ -10,11 +10,11 @@ import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
 import QuizBlock from '../components/QuizBlock';
 
-const skewleft = '/mod4/image (1).png';
-const uniform = '/mod4/image (2).png';
-const skewright = '/mod4/image (3).png';
-const unimodal = '/mod4/image (4).png';
-const stdf = '/mod4/notion3.png';
+const skewleft = '/capstone-/mod4/image (1).png';
+const uniform = '/capstone-/mod4/image (2).png';
+const skewright = '/capstone-/mod4/image (3).png';
+const unimodal = '/capstone-/mod4/image (4).png';
+const stdf = '/capstone-/mod4/notion3.png';
 
 const overview = (
     <div className="overview-text">
@@ -117,7 +117,7 @@ const quizData = [
     }
 ];
 
-const sum = encodeURI('/mod4/M4 Patterns and Variability (T).pdf');
+const sum = encodeURI('/capstone-/mod4/M4 Patterns and Variability (T).pdf');
 
 export function ModuleFour() {
     return (

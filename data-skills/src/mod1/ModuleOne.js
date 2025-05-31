@@ -8,9 +8,9 @@ import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import QuizBlock from '../components/QuizBlock';
 import ModuleIntro from '../components/ModuleIntro';
 
-const popvssamp = '/mod1/PopulationVsSample.png';
-const types = '/mod1/TypesSampling.png';
-const sum = encodeURI('/mod1/M1 Sampling (T).pdf');
+const popvssamp = '/capstone-/mod1/PopulationVsSample.png';
+const types = '/capstone-/mod1/TypesSampling.png';
+const sum = encodeURI('/capstone-/mod1/M1 Sampling (T).pdf');
 
 const overview = (
   <ParaBlock

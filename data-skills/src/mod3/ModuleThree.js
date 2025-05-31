@@ -9,7 +9,7 @@ import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
 import QuizBlock from '../components/QuizBlock';
 
-const relationships = '/mod3/Relationships.png';
+const relationships = '/capstone-/mod3/Relationships.png';
 
 const overview = (
   <div className="overview-text">
@@ -106,7 +106,7 @@ const quizData = [
   }
 ];
 
-const sum = encodeURI('/mod3/M3 Relationships (T).pdf)')
+const sum = encodeURI('/capstone-/mod3/M3 Relationships (T).pdf)')
 
 
 

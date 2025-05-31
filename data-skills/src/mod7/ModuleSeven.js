@@ -110,7 +110,7 @@ const quizData = [
   }
 ];
 
-const sum = encodeURI('/mod7/M7 Social Implications (T).pdf');
+const sum = encodeURI('/capstone-/mod7/M7 Social Implications (T).pdf');
 
 
 export function ModuleSeven() {

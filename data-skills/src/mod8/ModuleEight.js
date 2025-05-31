@@ -10,10 +10,10 @@ import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
 import QuizBlock from '../components/QuizBlock';
 
-const missing = '/mod8/MissingData.png';
-const iqr = '/mod8/IQR.png';
-const bpo = '/mod8/BoxPlotOutlier.png';
-const spo = '/mod8/ScatterPlotOutlier.png';
+const missing = '/capstone-/mod8/MissingData.png';
+const iqr = '/capstone-/mod8/IQR.png';
+const bpo = '/capstone-/mod8/BoxPlotOutlier.png';
+const spo = '/capstone-/mod8/ScatterPlotOutlier.png';
 
 const overview = (
     <div id="intro">
@@ -166,7 +166,7 @@ const quizData = [
   }
 ];
 
-const sum = encodeURI('/mod8/M8 Skewing the Data (T).pdf');
+const sum = encodeURI('/capstone-/mod8/M8 Skewing the Data (T).pdf');
 
 
 export function ModuleEight() {
