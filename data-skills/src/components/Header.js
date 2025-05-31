@@ -18,9 +18,9 @@ function Header() {
           <i className="bi bi-house nav-icon" title="Home"></i>
         </Link>
 
-        <Link to="/faw" className="nav-icon-link">
+        {/* <Link to="/faw" className="nav-icon-link">
           <i className="bi bi-question-circle nav-icon " title="FAQ"></i>
-        </Link>
+        </Link> */}
 
         <button 
           className="btn p-0"

@@ -85,7 +85,8 @@ const ModuleBar = () => {
       >
         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
           {modules.map((mod, i) => {
-            const fullLink = `/capstone-${mod.link}`;
+            // Remove the '/capstone-' prefix here because Router basename handles it
+            const fullLink = `/${mod.link}`;
             const isActive = currentPath === fullLink;
             return (
               <li
