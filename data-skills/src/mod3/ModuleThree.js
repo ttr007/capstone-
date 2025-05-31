@@ -7,8 +7,9 @@ import TableBlock from '../components/TableBlock';
 import ImageBlock from '../components/ImageBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
+import QuizBlock from '../components/QuizBlock';
 
-import relationships from './Relationships.png';
+const relationships = '/mod3/Relationships.png';
 
 const overview = (
   <div className="overview-text">
@@ -27,9 +28,85 @@ const toc = (
       <li><a href="#association-causation">Association ≠ Causation</a></li>
       <li><a href="#why-it-matters">Why It Matters</a></li>
       <li><a href="#real-world-applications">Real-World Applications</a></li>
+      <li><a href="#relation-quiz">Module Quiz</a></li>
     </ul>
   </div>
 );
+
+const quizData = [
+  {
+    id: 1,
+    question: "Which of the following is a key requirement for establishing causation?",
+    options: ["Random sampling", "Association", "Bias", "Missing data"],
+    correctAnswer: "Association",
+    explanation: {
+      correct: "Association is a necessary component of causation—you can't claim one thing causes another if there's no relationship between them.",
+      incorrect: "Random sampling ensures representativeness, bias undermines credibility, and missing data is a challenge to manage—not elements that establish causation."
+    }
+  },
+  {
+    id: 2,
+    question: "Why is temporal precedence important when assessing causality?",
+    options: [
+      "It reduces random error",
+      "It shows that changes in the cause happen before changes in the effect",
+      "It ensures variables are associated",
+      "It helps improve data visualization"
+    ],
+    correctAnswer: "It shows that changes in the cause happen before changes in the effect",
+    explanation: {
+      correct: "For one thing to cause another, it must come before it in time. This is known as temporal precedence.",
+      incorrect: "Temporal precedence doesn’t reduce random error, guarantee association, or relate to data visualization."
+    }
+  },
+  {
+    id: 3,
+    question: "What is a confounding variable?",
+    options: [
+      "A variable that strengthens causality",
+      "A variable that is always controlled for",
+      "A variable that influences both the independent and dependent variables",
+      "A variable that only affects the independent variable"
+    ],
+    correctAnswer: "A variable that influences both the independent and dependent variables",
+    explanation: {
+      correct: "A confounding variable can create a false impression of a relationship by affecting both variables under study.",
+      incorrect: "Confounders distort, not strengthen, causality; they are not always identified or controlled and must affect both variables, not just one."
+    }
+  },
+  {
+    id: 4,
+    question: "Which of these best demonstrates causality?",
+    options: [
+      "People who eat breakfast tend to weigh less",
+      "A randomized controlled trial shows that a new drug lowers blood pressure",
+      "Two variables show a strong positive correlation",
+      "An observational study finds a link between exercise and mood"
+    ],
+    correctAnswer: "A randomized controlled trial shows that a new drug lowers blood pressure",
+    explanation: {
+      correct: "Randomized controlled trials are the gold standard for establishing causality due to control over variables and random assignment.",
+      incorrect: "Correlational findings and observational studies can suggest links but cannot establish cause and effect the way RCTs can."
+    }
+  },
+  {
+    id: 5,
+    question: "How can researchers reduce the impact of confounding variables?",
+    options: [
+      "Avoid using randomization",
+      "Use smaller sample sizes",
+      "Apply control variables or conduct experiments",
+      "Only collect data once"
+    ],
+    correctAnswer: "Apply control variables or conduct experiments",
+    explanation: {
+      correct: "Controlling for confounding variables or using experiments (especially randomized ones) helps isolate causal effects.",
+      incorrect: "Avoiding randomization and collecting limited or small-sample data increase confounding rather than reducing it."
+    }
+  }
+];
+
+
 
 export function ModuleThree() {
   return (
@@ -167,6 +244,11 @@ export function ModuleThree() {
             ['Education', 'Does more study time improve test scores?'],
           ]}
         />
+      </div>
+      <div id="relation-quiz">
+        <ParaBlock title="Module Quiz" level={1} />
+
+        <QuizBlock quizData={quizData} />
       </div>
 
       <ParaBlock title="Additional Sources" level={1} />

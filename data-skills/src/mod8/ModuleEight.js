@@ -8,52 +8,177 @@ import FormulaBlock from '../components/FormulaBlock';
 import ImageBlock from '../components/ImageBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
+import QuizBlock from '../components/QuizBlock';
 
-import missing from './MissingData.png';
-import iqr from './IQR.png';
-import bpo from './BoxPlotOutlier.png';
-import spo from './ScatterPlotOutlier.png';
+const missing = '/mod8/MissingData.png';
+const iqr = '/mod8/IQR.png';
+const bpo = '/mod8/BoxPlotOutlier.png';
+const spo = '/mod8/ScatterPlotOutlier.png';
 
 const overview = (
-  <div id="intro">
-    <ParaBlock
-      items={[
-        <span key="1">
-          Some data entries—whether missing or extreme—can <strong>distort your results</strong> and lead to misleading conclusions. Understanding <strong>how to recognize and handle these values</strong>—especially missing data and outliers—is essential to making fair, accurate, and useful decisions based on your data.
-        </span>
-      ]}
-    />
-  </div>
+    <div id="intro">
+        <ParaBlock
+            items={[
+                <span key="1">
+                    Some data entries—whether missing or extreme—can <strong>distort your results</strong> and lead to misleading conclusions. Understanding <strong>how to recognize and handle these values</strong>—especially missing data and outliers—is essential to making fair, accurate, and useful decisions based on your data.
+                </span>
+            ]}
+        />
+    </div>
 );
 
 const toc = (
-  <div className="toc-container">
-    <h5>Table of Contents</h5>
-    <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
-      <li><a href="#missing-data">Missing Data</a></li>
-      <li><a href="#how-to-handle-missing-data">How to Handle Missing Data</a></li>
-      <li><a href="#outliers">What is an Outlier</a></li>
-      <li><a href="#what-to-do-with-outliers">How to Approach Outliers</a></li>
-      <li><a href="#types-of-outliers">Types of Outliers</a></li>
-      <li><a href="#statistical-methods">How to Spot Outliers</a></li>
-      <li><a href="#impact-of-skew">The Impact of Skewed Data</a></li>
-      <li><a href="#why-it-matters">Why It Matters</a></li>
-    </ul>
-  </div>
+    <div className="toc-container">
+        <h5>Table of Contents</h5>
+        <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
+            <li><a href="#missing-data">Missing Data</a></li>
+            <li><a href="#how-to-handle-missing-data">How to Handle Missing Data</a></li>
+            <li><a href="#outliers">What is an Outlier</a></li>
+            <li><a href="#what-to-do-with-outliers">How to Approach Outliers</a></li>
+            <li><a href="#types-of-outliers">Types of Outliers</a></li>
+            <li><a href="#statistical-methods">How to Spot Outliers</a></li>
+            <li><a href="#impact-of-skew">The Impact of Skewed Data</a></li>
+            <li><a href="#why-it-matters">Why It Matters</a></li>
+            <li><a href="#skew-quiz">Module Quiz</a></li>
+        </ul>
+    </div>
 );
+const quizData = [
+  {
+    id: 1,
+    question: "What is missing data in a dataset?",
+    options: [
+      "Data that was collected incorrectly",
+      "Incomplete information or gaps in the dataset",
+      "Data points that are unusually high or low",
+      "Data that has been duplicated"
+    ],
+    correctAnswer: "Incomplete information or gaps in the dataset",
+    explanation: {
+      correct: "Correct! Missing data refers to gaps or incomplete entries in your dataset.",
+      incorrect: "Incorrect. Missing data refers to gaps in the dataset—not errors, outliers, or duplicates.",
+    }
+  },
+  {
+    id: 2,
+    question: "Which type of missing data occurs when data is missing due to the thing being measured?",
+    options: [
+      "MCAR (Missing Completely at Random)",
+      "MAR (Missing at Random)",
+      "MNAR (Missing Not at Random)",
+      "None of the above"
+    ],
+    correctAnswer: "MNAR (Missing Not at Random)",
+    explanation: {
+      correct: "Right! MNAR means data is missing because of the value itself, like unhappy employees skipping a survey.",
+      incorrect: "Incorrect. MNAR happens when the missingness is related to the value being measured.",
+    }
+  },
+  {
+    id: 3,
+    question: "Which of the following is NOT a recommended way to handle missing data?",
+    options: [
+      "Investigate why data is missing",
+      "Use imputation to fill in missing values",
+      "Automatically delete all missing data points",
+      "Be transparent about missing data in reports"
+    ],
+    correctAnswer: "Automatically delete all missing data points",
+    explanation: {
+      correct: "Correct! Automatically deleting missing data can introduce bias and lose important information.",
+      incorrect: "Incorrect. Automatically deleting missing data can be harmful—better to investigate or impute.",
+    }
+  },
+  {
+    id: 4,
+    question: "What is an outlier?",
+    options: [
+      "A data point that is typical of the dataset",
+      "A missing data point",
+      "A data point that significantly differs from the rest",
+      "A duplicated data entry"
+    ],
+    correctAnswer: "A data point that significantly differs from the rest",
+    explanation: {
+      correct: "Exactly! Outliers are values that lie far outside the typical pattern of the data.",
+      incorrect: "Incorrect. Outliers are values that differ a lot from the rest—not typical, missing, or duplicates.",
+    }
+  },
+  {
+    id: 5,
+    question: "Why shouldn’t you automatically delete outliers?",
+    options: [
+      "They may be data entry errors",
+      "They can be meaningful signals about the data",
+      "Removing them can bias results",
+      "All of the above"
+    ],
+    correctAnswer: "All of the above",
+    explanation: {
+      correct: "Correct! Outliers need investigation since they could be errors or important insights.",
+      incorrect: "Incorrect. Outliers may be important or error-prone—don't delete them without checking.",
+    }
+  },
+  {
+    id: 6,
+    question: "Which visualization is good for spotting univariate outliers?",
+    options: [
+      "Scatter Plot",
+      "Box Plot",
+      "Pie Chart",
+      "Bar Graph"
+    ],
+    correctAnswer: "Box Plot",
+    explanation: {
+      correct: "Right! Box plots are great for visualizing extreme values in one variable.",
+      incorrect: "Incorrect. Box plots are best for finding outliers in single variables—not scatter, pie, or bar charts.",
+    }
+  },
+  {
+    id: 7,
+    question: "What does the Interquartile Range (IQR) method help identify?",
+    options: [
+      "Missing data",
+      "Values far from the middle 50% of the dataset (potential outliers)",
+      "The average value",
+      "Duplicates in data"
+    ],
+    correctAnswer: "Values far from the middle 50% of the dataset (potential outliers)",
+    explanation: {
+      correct: "Correct! IQR helps find values that are far from the center, which may be outliers.",
+      incorrect: "Incorrect. IQR identifies potential outliers—not averages, missing data, or duplicates.",
+    }
+  },
+  {
+    id: 8,
+    question: "What is a potential impact of ignoring missing data or outliers?",
+    options: [
+      "Stronger conclusions",
+      "More reliable analysis",
+      "Biased or misleading results",
+      "Faster processing"
+    ],
+    correctAnswer: "Biased or misleading results",
+    explanation: {
+      correct: "Exactly! Ignoring these can lead to incorrect or unfair conclusions.",
+      incorrect: "Incorrect. Ignoring missing data or outliers often results in misleading or biased conclusions.",
+    }
+  }
+];
+
 
 export function ModuleEight() {
-  return (
-    <ModulePage
-      title="Skewing the Data"
-      url="https://www.youtube.com/embed/dQw4w9WgXcQ"
-    >
-      <ModuleIntro
-        title="Skewing the Data"
-        readTime="7 min read"
-        overview={overview}
-        toc={toc}
-      />
+    return (
+        <ModulePage
+            title="Skewing the Data"
+            url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        >
+            <ModuleIntro
+                title="Skewing the Data"
+                readTime="7 min read"
+                overview={overview}
+                toc={toc}
+            />
 
             <div id="summary">
                 <ParaBlock title="Summary" level={1} items={[]} />
@@ -210,6 +335,10 @@ export function ModuleEight() {
                 />
             </div>
 
+            <div id="skew-quiz">
+                <ParaBlock title="Module Quiz" level={1} />
+                <QuizBlock quizData={quizData} />
+            </div>
             <AdditionalSourcesBlock
                 sources={[
                     {

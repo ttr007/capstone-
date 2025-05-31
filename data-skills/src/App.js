@@ -9,12 +9,16 @@ import { ModuleFive } from './mod5/ModuleFive';
 import { ModuleSix } from './mod6/ModuleSix';
 import { ModuleSeven } from './mod7/ModuleSeven';
 import { ModuleEight } from './mod8/ModuleEight';
+import ScrollToTop from './components/ScrollToTop';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
+
       <div className="app-container">
         <main className="content-container">
           <Routes>

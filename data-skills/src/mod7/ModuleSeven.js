@@ -6,6 +6,7 @@ import CalloutBlock from '../components/CalloutBlock';
 import TableBlock from '../components/TableBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
+import QuizBlock from '../components/QuizBlock';
 
 const overview = (
     <div className="overview-text">
@@ -27,9 +28,87 @@ const toc = (
             <li><a href="#reinforcing-bias">Reinforcing Bias</a></li>
             <li><a href="#real-world-impacts">Real World Impacts</a></li>
             <li><a href="#why-it-matters">Why It Matters</a></li>
+            <li><a href="#social-quiz">Module Quiz</a></li>
         </ul>
     </div>
 );
+const quizData = [
+  {
+    id: 1,
+    question: "What does 'representation' in data collection mean?",
+    options: [
+      "Including only the majority group",
+      "Ensuring data reflects all groups fairly",
+      "Collecting data from the easiest sources",
+      "Ignoring minority groups to simplify analysis"
+    ],
+    correctAnswer: "Ensuring data reflects all groups fairly",
+    explanation: {
+      correct: "Correct! Representation means the data reflects the diversity of the population fairly.",
+      incorrect: "Incorrect. Representation means including all groups fairly—not excluding minorities, simplifying for ease, or only reflecting majorities.",
+    }
+  },
+  {
+    id: 2,
+    question: "What is a risk of under-representation in data?",
+    options: [
+      "Biased conclusions that miss important groups",
+      "More accurate insights about the population",
+      "Faster data processing",
+      "None of the above"
+    ],
+    correctAnswer: "Biased conclusions that miss important groups",
+    explanation: {
+      correct: "Right! Under-representation leads to bias and can exclude voices of certain groups.",
+      incorrect: "Incorrect. Under-representation leads to biased conclusions—not more accuracy, speed, or neutrality.",
+    }
+  },
+  {
+    id: 3,
+    question: "Which sampling method divides the population into groups and samples each proportionally?",
+    options: [
+      "Random Sampling",
+      "Convenience Sampling",
+      "Stratified Sampling",
+      "Snowball Sampling"
+    ],
+    correctAnswer: "Stratified Sampling",
+    explanation: {
+      correct: "Correct! Stratified sampling ensures each subgroup is proportionally represented.",
+      incorrect: "Incorrect. Stratified sampling divides the population into groups and samples each group proportionally—not randomly, conveniently, or through referral chains.",
+    }
+  },
+  {
+    id: 4,
+    question: "How can bias in data reinforce inequalities?",
+    options: [
+      "By producing policies that work for everyone",
+      "By ignoring minority group data",
+      "By perpetuating unfair treatment and discrimination",
+      "By improving data accuracy"
+    ],
+    correctAnswer: "By perpetuating unfair treatment and discrimination",
+    explanation: {
+      correct: "Exactly! Biased data can reinforce existing inequalities in policies and algorithms.",
+      incorrect: "Incorrect. Bias reinforces unfairness and discrimination—it doesn’t improve accuracy or help everyone.",
+    }
+  },
+  {
+    id: 5,
+    question: "Why are ethical data practices important?",
+    options: [
+      "They speed up data collection",
+      "They build public trust and support fair decisions",
+      "They eliminate all bias",
+      "They reduce the cost of research"
+    ],
+    correctAnswer: "They build public trust and support fair decisions",
+    explanation: {
+      correct: "Correct! Ethical practices help build trust and lead to better outcomes.",
+      incorrect: "Incorrect. Ethical practices are about fairness and trust—not about speed, cost, or eliminating all bias.",
+    }
+  }
+];
 
 export function ModuleSeven() {
     return (
@@ -148,7 +227,10 @@ export function ModuleSeven() {
                     ]}
                 />
             </div>
-
+            <div id="social-quiz">
+                <ParaBlock title="Module Quiz" level={1} />
+                <QuizBlock quizData={quizData} />
+            </div>
             <AdditionalSourcesBlock
                 sources={[
                     {

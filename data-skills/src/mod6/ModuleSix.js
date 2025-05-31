@@ -7,9 +7,9 @@ import TableBlock from '../components/TableBlock';
 import ImageBlock from '../components/ImageBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
+import QuizBlock from '../components/QuizBlock';
 
-import graph from './graph.png'
-
+const graph = '/mod6/graph.png';
 
 const overview = (
     <div className="overview-text">
@@ -30,9 +30,87 @@ const toc = (
             <li><a href="#p-value">How It's Measured: P-value</a></li>
             <li><a href="#statistically-vs-practically">Statistically Significant vs Practically Important</a></li>
             <li><a href="#why-it-matters">Why It Matters</a></li>
+            <li><a href="#stat-quiz">Module Quiz</a></li>
         </ul>
     </div>
 );
+const quizData = [
+  {
+    id: '1',
+    question: 'What does it mean if a result is statistically significant?',
+    options: [
+      'The result is unlikely due to chance',
+      'The result happened by coincidence',
+      'The result is always practically important',
+      'The result has a p-value greater than 0.05',
+    ],
+    correctAnswer: 'The result is unlikely due to chance',
+    explanation: {
+      correct: 'Correct! Statistical significance means the result is unlikely to have occurred just by chance.',
+      incorrect: 'Incorrect. Statistical significance means the result is unlikely to be due to chance—not likely or due to coincidence, and it doesn’t imply practical importance or a high p-value.',
+    },
+  },
+  {
+    id: '2',
+    question: 'What does a low p-value (less than 0.05) indicate?',
+    options: [
+      'The result is likely due to random chance',
+      'The result is unlikely to be due to chance',
+      'The result is not statistically significant',
+      'The sample size was too small',
+    ],
+    correctAnswer: 'The result is unlikely to be due to chance',
+    explanation: {
+      correct: 'Exactly! A p-value below 0.05 means the result is unlikely due to chance, indicating statistical significance.',
+      incorrect: 'No, a low p-value means the result is unlikely to be due to chance—not that it’s random, insignificant, or about sample size.',
+    },
+  },
+  {
+    id: '3',
+    question: 'Which of the following is TRUE about statistical significance and practical importance?',
+    options: [
+      'Statistical significance always means the result matters practically',
+      'Statistical significance and practical importance are the same thing',
+      'A result can be statistically significant but not practically important',
+      'Practical importance is not related to data analysis',
+    ],
+    correctAnswer: 'A result can be statistically significant but not practically important',
+    explanation: {
+      correct: 'Correct! A result may be statistically significant but have little real-world impact.',
+      incorrect: 'Incorrect. Statistical significance does not guarantee the result is important in practical terms.',
+    },
+  },
+  {
+    id: '4',
+    question: 'What is the meaning of a p-value greater than 0.05?',
+    options: [
+      'The result is statistically significant',
+      'The result is unlikely due to chance',
+      'The result may be due to chance and is not significant',
+      'The data is always accurate',
+    ],
+    correctAnswer: 'The result may be due to chance and is not significant',
+    explanation: {
+      correct: 'Correct! A p-value greater than 0.05 suggests the result might be due to chance and is not statistically significant.',
+      incorrect: 'No, a p-value above 0.05 means the result is not statistically significant and may be due to chance—not that it’s meaningful or always accurate.',
+    },
+  },
+  {
+    id: '5',
+    question: 'Why is it important to consider statistical significance in decision-making?',
+    options: [
+      'To avoid making choices based on random variation',
+      'To always accept every observed difference as true',
+      'To ignore p-values in data analysis',
+      'To increase guesswork and assumptions',
+    ],
+    correctAnswer: 'To avoid making choices based on random variation',
+    explanation: {
+      correct: 'Exactly! Statistical significance helps reduce guesswork by showing which results are likely real.',
+      incorrect: 'Incorrect. Considering significance helps *reduce* guesswork—it’s not about accepting everything, ignoring p-values, or encouraging assumptions.',
+    },
+  },
+];
 
 export function ModuleSix() {
     return (
@@ -179,7 +257,10 @@ export function ModuleSix() {
                     ]}
                 />
             </div>
-
+            <div id="stat-quiz">
+                <ParaBlock title="Module Quiz" level={1} />
+                <QuizBlock quizData={quizData} />
+            </div>
             <AdditionalSourcesBlock
                 sources={[
                     {

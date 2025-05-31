@@ -5,18 +5,22 @@ import CalloutBlock from '../components/CalloutBlock';
 import ImageBlock from '../components/ImageBlock';
 import TableBlock from '../components/TableBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
-
-import popvssamp from './PopulationVsSample.png';
-import types from './TypesSampling.png';
-import M1Quiz from './ModuleOneQuiz';
+import QuizBlock from '../components/QuizBlock';
 import ModuleIntro from '../components/ModuleIntro';
+
+const popvssamp = '/mod1/PopulationVsSample.png';
+const types = '/mod1/TypesSampling.png';
+const sum = '/mod1/M1 Sampling (T).pdf';
 
 const overview = (
   <ParaBlock
     items={[
-      "Determining the right sample size is crucial for research accuracy. A small sample may misrepresent the population, while a large one can be resource-intensive. Balancing statistical significance with practicality requires considering effect size and margin of error."
+      <span>
+        Determining the right sample size is crucial for research accuracy. A small sample may <strong>misrepresent</strong> the population, while a large one can be <strong>resource-intensive</strong>. Balancing statistical significance with <strong>practicality</strong> requires considering effect size and margin of error.
+      </span>
     ]}
   />
+
 );
 const toc = (
   <div className="toc-container">
@@ -27,10 +31,69 @@ const toc = (
       <li><a href="#sampling-methods">Sampling Methods</a></li>
       <li><a href="#probability-sampling">Probability Sampling (Random Sampling)</a></li>
       <li><a href="#non-prob-sampling">Non Probability Sampling</a></li>
-      <li>Module Quiz</li>
+      <li><a href="#samp-quiz">Module Quiz</a></li>
     </ul>
   </div>
 );
+
+const quizData = [
+  {
+    id: 1,
+    question: "What type of sampling method involves splitting the population into groups and selecting members randomly from each group?",
+    options: ["Convenience Sampling", "Stratified Random Sampling", "Systematic Sampling", "Cluster Sampling"],
+    correctAnswer: "Stratified Random Sampling",
+    explanation: {
+      correct: "Stratified sampling ensures each subgroup is proportionally represented by randomly selecting individuals within those subgroups.",
+      incorrect: "Incorrect. Convenience sampling selects the easiest to access, Systematic sampling picks every nth person, and Cluster sampling selects entire groups rather than individuals."
+    }
+  },
+  {
+    id: 2,
+    question: "What is the primary drawback of convenience sampling?",
+    options: ["It’s too expensive", "It ensures too much diversity", "It may not represent the population well", "It takes too long to collect"],
+    correctAnswer: "It may not represent the population well",
+    explanation: {
+      correct: "Convenience sampling often leads to bias because it doesn't fairly represent the broader population.",
+      incorrect: "Incorrect. Convenience sampling is cheap, tends to limit diversity, and is fast to collect, so these options don't represent its main drawback."
+    }
+  },
+  {
+    id: 3,
+    question: "Why is a larger sample size generally better for statistical analysis?",
+    options: ["It guarantees better results", "It reduces variability and increases reliability", "It eliminates all bias", "It makes the process faster"],
+    correctAnswer: "It reduces variability and increases reliability",
+    explanation: {
+      correct: "Larger sample sizes help detect patterns more reliably and reduce the margin of error.",
+      incorrect: "Incorrect. Larger sample sizes don't guarantee correctness, eliminate all bias, or make the process faster."
+    }
+  },
+  {
+    id: 4,
+    question: "Which method gives every individual in the population an equal chance of being selected?",
+    options: ["Voluntary Sampling", "Simple Random Sampling", "Convenience Sampling", "Cluster Sampling"],
+    correctAnswer: "Simple Random Sampling",
+    explanation: {
+      correct: "Simple random sampling means each member has an equal chance of being chosen, minimizing selection bias.",
+      incorrect: "Incorrect. Voluntary sampling has self-selection bias, convenience sampling is not random, and cluster sampling selects groups, not individuals."
+    }
+  },
+  {
+    id: 5,
+    question: "What does the law of large numbers state?",
+    options: [
+      "Larger samples always have more bias",
+      "The more data, the more unpredictable results are",
+      "With more data, results get closer to the true average",
+      "Smaller samples are better for accuracy"
+    ],
+    correctAnswer: "With more data, results get closer to the true average",
+    explanation: {
+      correct: "The law of large numbers means the average result of a large sample tends to reflect the actual population average.",
+      incorrect: "Incorrect. Bias depends on sampling method, larger datasets stabilize results, and smaller samples are less accurate."
+    }
+  }
+];
+
 
 
 export function ModuleOne() {
@@ -38,12 +101,15 @@ export function ModuleOne() {
     <ModulePage
       title="Sampling"
       url="https://www.youtube.com/embed/7S7j75d3GM4"
+
     >
       <ModuleIntro
         title="Sampling"
         readTime="6 min read"
         overview={overview}
         toc={toc}
+        pdfUrl={sum}
+        downloadFileName="Sampling.pdf"
       />
       <ParaBlock title="Summary" level={1} />
       <ListBlock
@@ -76,12 +142,12 @@ export function ModuleOne() {
           ]}
         />
         <div className="indent">
-        <ListBlock
-          items={[
-            "A small, focused group can be useful for neighborhood-level questions.",
-            "Larger, diverse populations typically require bigger samples for stronger conclusions."
-          ]}
-        />
+          <ListBlock
+            items={[
+              "A small, focused group can be useful for neighborhood-level questions.",
+              "Larger, diverse populations typically require bigger samples for stronger conclusions."
+            ]}
+          />
         </div>
         <ListBlock
           items={[
@@ -117,7 +183,7 @@ export function ModuleOne() {
           title="Example: Context"
           type="example"
           description={[
-            "10% difference in favorite ice cream flavor = interesting.",
+            "10% difference in favorite ice cream flavor = interesting. ",
             "10% difference in cancer treatment outcomes = critical."
           ]}
         />
@@ -211,9 +277,10 @@ export function ModuleOne() {
           description={["Non-probability samples may leave out important voices or over-represent strong opinions."]}
         />
       </div>
-
-      <ParaBlock title="Module Quiz" level={1} />
-      <M1Quiz />
+      <div id="samp-quiz">
+        <ParaBlock title="Module Quiz" level={1} />
+        <QuizBlock quizData={quizData} />
+      </div>
 
       <AdditionalSourcesBlock
         sources={[

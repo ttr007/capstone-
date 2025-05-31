@@ -7,42 +7,122 @@ import TableBlock from '../components/TableBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ImageBlock from '../components/ImageBlock';
 import ModuleIntro from '../components/ModuleIntro';
+import QuizBlock from '../components/QuizBlock';
 
-import randomvsys from './RandomVsSystematic.png';
+const randomvsys = '/mod5/RandomVsSystematic.png';
 
 const overview = (
-  <div className="overview-text">
-    <p>
-      Understanding uncertainty in data collection helps us account for <strong>errors</strong> and <strong>improve decision-making</strong>. Recognizing errors and uncertainties in data collection helps us ensure more reliable and accurate data, which leads to better decision-making. This module covers:
-    </p>
-  </div>
+    <div className="overview-text">
+        <p>
+            Understanding uncertainty in data collection helps us account for <strong>errors</strong> and <strong>improve decision-making</strong>. Recognizing errors and uncertainties in data collection helps us ensure more reliable and accurate data, which leads to better decision-making. This module covers:
+        </p>
+    </div>
 );
 
 const toc = (
-  <div className="toc-container">
-    <h5>Table of Contents</h5>
-    <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
-      <li><a href="#noise">Noise</a></li>
-      <li><a href="#inaccuracy">Inaccuracy</a></li>
-      <li><a href="#accuracy-vs-precision">Accuracy vs. Precision</a></li>
-      <li><a href="#comparing-noise-inaccuracy">Comparing Noise and Inaccuracy</a></li>
-      <li><a href="#why-this-matters">Why This Matters</a></li>
-    </ul>
-  </div>
+    <div className="toc-container">
+        <h5>Table of Contents</h5>
+        <ul style={{ listStylePosition: 'inside', paddingRight: '1rem' }}>
+            <li><a href="#noise">Noise</a></li>
+            <li><a href="#inaccuracy">Inaccuracy</a></li>
+            <li><a href="#accuracy-vs-precision">Accuracy vs. Precision</a></li>
+            <li><a href="#comparing-noise-inaccuracy">Comparing Noise and Inaccuracy</a></li>
+            <li><a href="#why-this-matters">Why This Matters</a></li>
+            <li><a href="#unc-quiz">Module Quiz</a></li>
+        </ul>
+    </div>
 );
+const quizData = [
+  {
+    id: '1',
+    question: 'What is "noise" in data collection?',
+    options: [
+      'Consistent errors caused by faulty instruments',
+      'Random variation that makes it harder to interpret data',
+      'Accurate and precise data measurements',
+      'A type of deliberate data manipulation'
+    ],
+    correctAnswer: 'Random variation that makes it harder to interpret data',
+    explanation: {
+      correct: 'Correct! Noise is random variation that naturally occurs and can obscure real patterns in data.',
+      incorrect: 'Incorrect. Noise refers to random variation, not consistent errors, deliberate manipulation, or ideal data.'
+    }
+  },
+  {
+    id: '2',
+    question: 'Which of the following best describes "inaccuracy"?',
+    options: [
+      'Random variation in data collection',
+      'Consistent, repeatable errors caused by flawed tools or methods',
+      'Natural variability in the population',
+      'A perfectly calibrated instrument'
+    ],
+    correctAnswer: 'Consistent, repeatable errors caused by flawed tools or methods',
+    explanation: {
+      correct: 'Exactly! Inaccuracy refers to systematic errors that cause consistent bias in measurements.',
+      incorrect: 'Nope. Inaccuracy means systematic, repeatable errors—unlike randomness, population variability, or perfection.'
+    }
+  },
+  {
+    id: '3',
+    question: 'How can noise be reduced?',
+    options: [
+      'Ignoring outliers in data',
+      'Collecting more data and calibrating tools',
+      'Using inaccurate instruments intentionally',
+      'Avoiding data visualization'
+    ],
+    correctAnswer: 'Collecting more data and calibrating tools',
+    explanation: {
+      correct: 'Yes! Collecting more data helps smooth out random noise, and calibrating tools reduces measurement errors.',
+      incorrect: 'Incorrect. Reducing noise involves collecting more data, improving tools, and using visuals—not ignoring or misusing data.'
+    }
+  },
+  {
+    id: '4',
+    question: 'Which statement is TRUE about accuracy and precision?',
+    options: [
+      'High precision means measurements are close to the true value',
+      'High accuracy means measurements are consistent but wrong',
+      'High accuracy and high precision mean measurements are both correct and consistent',
+      'Accuracy and precision are the same concept'
+    ],
+    correctAnswer: 'High accuracy and high precision mean measurements are both correct and consistent',
+    explanation: {
+      correct: 'Correct! Ideal data has both high accuracy (correctness) and high precision (consistency).',
+      incorrect: 'Incorrect. Accuracy and precision are not the same—true quality means being both accurate and precise.'
+    }
+  },
+  {
+    id: '5',
+    question: 'Why is addressing inaccuracy important?',
+    options: [
+      'It helps reduce random noise in data',
+      'It prevents misleading conclusions caused by biased data',
+      'It makes data collection faster',
+      'It eliminates the need for calibration'
+    ],
+    correctAnswer: 'It prevents misleading conclusions caused by biased data',
+    explanation: {
+      correct: 'Exactly! Fixing inaccuracy prevents systematic bias that leads to wrong conclusions.',
+      incorrect: 'No, addressing inaccuracy corrects bias—not noise, speed, or tool calibration avoidance.'
+    }
+  }
+];
+
 
 export function ModuleFive() {
-  return (
-    <ModulePage
-      title="Uncertainty"
-      url="https://www.youtube.com/embed/dQw4w9WgXcQ"
-    >
-      <ModuleIntro
-        title="Uncertainty"
-        readTime="4 min read"
-        overview={overview}
-        toc={toc}
-      />
+    return (
+        <ModulePage
+            title="Uncertainty"
+            url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        >
+            <ModuleIntro
+                title="Uncertainty"
+                readTime="4 min read"
+                overview={overview}
+                toc={toc}
+            />
 
             <div id="summary">
                 <ParaBlock title="Summary" items={[]} />
@@ -163,6 +243,11 @@ export function ModuleFive() {
                         "When you account for noise and inaccuracy, your data becomes more trustworthy—and your insights more valuable."
                     ]}
                 />
+            </div>
+
+            <div id="unc-quiz">
+                <ParaBlock title="Module Quiz" level={1} />
+                <QuizBlock quizData={quizData} />
             </div>
             <AdditionalSourcesBlock
                 sources={[

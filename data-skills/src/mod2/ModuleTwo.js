@@ -8,9 +8,10 @@ import ImageBlock from '../components/ImageBlock';
 import TableBlock from '../components/TableBlock';
 import AdditionalSourcesBlock from '../components/AdditionalBlock';
 import ModuleIntro from '../components/ModuleIntro';
+import QuizBlock from '../components/QuizBlock';
 
-import PercentIncrease from './PercentIncrease.png';
-import PercentDecrease from './PercentDecrease.png';
+const PercentIncrease = '/mod2/PercentIncrease.png';
+const PercentDecrease = '/mod2/PercentDecrease.png';
 
 const overview = (
   <div className="overview-text">
@@ -28,9 +29,90 @@ const toc = (
       <li><a href="#percentage-point-difference">Percentage Point Difference</a></li>
       <li><a href="#real-world-applications">Real World Applications</a></li>
       <li><a href="#why-it-matters">Why it Matters</a></li>
+      <li><a href="#cot-quiz">Module Quiz</a></li>
     </ul>
   </div>
 );
+
+const quizData = [
+  {
+    id: 1,
+    question: "Which of the following strategies is most effective for promoting phonemic awareness in early readers?",
+    options: [
+      "Having students memorize word lists",
+      "Engaging students in rhyming games",
+      "Teaching students to recognize whole words by sight",
+      "Encouraging silent reading of complex texts"
+    ],
+    correctAnswer: "Engaging students in rhyming games",
+    explanation: {
+      correct: "Rhyming games help students recognize and manipulate sounds in words, a key component of phonemic awareness.",
+      incorrect: "Memorization doesn’t support sound awareness, sight-word recognition bypasses sound-level decoding, and silent reading is too advanced to build phonemic skills."
+    }
+  },
+  {
+    id: 2,
+    question: "What is the primary purpose of shared reading in a classroom setting?",
+    options: [
+      "To assess individual student reading levels",
+      "To model fluent reading and engage students in a text",
+      "To allow students to read independently at their own pace",
+      "To test students' comprehension through quizzes"
+    ],
+    correctAnswer: "To model fluent reading and engage students in a text",
+    explanation: {
+      correct: "Shared reading involves the teacher reading aloud with students, demonstrating fluent reading and encouraging participation.",
+      incorrect: "Shared reading is not primarily for assessment, independent reading, or testing—it’s a modeling and engagement strategy."
+    }
+  },
+  {
+    id: 3,
+    question: "Which activity best supports vocabulary development in young children?",
+    options: [
+      "Having children copy words from the board",
+      "Providing definitions for new words without context",
+      "Reading aloud and discussing new words in context",
+      "Encouraging children to look up words in the dictionary"
+    ],
+    correctAnswer: "Reading aloud and discussing new words in context",
+    explanation: {
+      correct: "Discussing new words during read-alouds helps children understand and remember vocabulary through meaningful context.",
+      incorrect: "Copying or defining words without context doesn’t foster deep understanding, and dictionary use is often too abstract for young children."
+    }
+  },
+  {
+    id: 4,
+    question: "What is a key characteristic of emergent literacy?",
+    options: [
+      "Ability to write essays independently",
+      "Understanding the alphabetic principle",
+      "Reading fluently with high comprehension",
+      "Using complex grammatical structures in writing"
+    ],
+    correctAnswer: "Understanding the alphabetic principle",
+    explanation: {
+      correct: "Emergent literacy includes recognizing that letters represent sounds, which is the alphabetic principle.",
+      incorrect: "Essay writing, fluent reading, and complex grammar all come later—emergent literacy focuses on foundational concepts like sound-letter relationships."
+    }
+  },
+  {
+    id: 5,
+    question: "Why is it important to incorporate students' home languages and cultures into literacy instruction?",
+    options: [
+      "It simplifies lesson planning for teachers",
+      "It ensures all students learn English faster",
+      "It validates students' identities and promotes engagement",
+      "It reduces the need for differentiated instruction"
+    ],
+    correctAnswer: "It validates students' identities and promotes engagement",
+    explanation: {
+      correct: "Acknowledging students' backgrounds makes learning more relevant and fosters a supportive environment.",
+      incorrect: "It doesn’t make planning easier or eliminate the need for differentiation, and it supports learning without guaranteeing faster English acquisition."
+    }
+  }
+];
+
+
 
 export function ModuleTwo() {
   return (
@@ -181,6 +263,11 @@ export function ModuleTwo() {
             'Whether you’re working in policy, business, or daily life, these concepts guide smarter actions and better communication.'
           ]}
         />
+      </div>
+
+      <div id="cot-quiz">
+        <ParaBlock title="Module Quiz" level={1} />
+        <QuizBlock quizData={quizData} />
       </div>
 
       <AdditionalSourcesBlock
